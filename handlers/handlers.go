@@ -2,9 +2,12 @@ package handlers
 
 import (
 	"embed"
+	"fmt"
+	"github.com/cpustejovsky/personal-site/domain/education"
 	"github.com/gorilla/mux"
 	"html/template"
 	"io"
+	"io/fs"
 	"log"
 	"net/http"
 	"time"
@@ -13,6 +16,8 @@ import (
 var (
 	//go:embed "templates/*"
 	templates embed.FS
+	//go:embed "static/*"
+	static embed.FS
 )
 
 type Handler struct {
@@ -30,17 +35,18 @@ func New() (*Handler, error) {
 		Handler:  router,
 		Renderer: *r,
 	}
-	//TODO: determine the purpose of this function
-	//staticHandler, err := newStaticHandler()
-	//if err != nil {
-	//	return nil, fmt.Errorf("problem making static resources handler: %w", err)
-	//}
+
+	staticHandler, err := newStaticHandler()
+	if err != nil {
+		return nil, fmt.Errorf("problem making static resources handler: %w", err)
+	}
 
 	router.HandleFunc("/", handler.index).Methods(http.MethodGet)
 	router.HandleFunc("/about", handler.about).Methods(http.MethodGet)
 	router.HandleFunc("/projects", handler.projects).Methods(http.MethodGet)
-	router.HandleFunc("/reading", handler.reading).Methods(http.MethodGet)
+	router.HandleFunc("/education", handler.education).Methods(http.MethodGet)
 	router.HandleFunc("/resources", handler.resources).Methods(http.MethodGet)
+	router.PathPrefix("/static/").Handler(http.StripPrefix("/static/", staticHandler))
 	router.NotFoundHandler = http.HandlerFunc(handler.notfound)
 
 	return handler, nil
@@ -99,8 +105,8 @@ func (h *Handler) projects(w http.ResponseWriter, _ *http.Request) {
 	}
 }
 
-func (h *Handler) reading(w http.ResponseWriter, _ *http.Request) {
-	err := h.Renderer.RenderHTML(w, "reading.gohtml", nil)
+func (h *Handler) education(w http.ResponseWriter, _ *http.Request) {
+	err := h.Renderer.RenderHTML(w, "education.gohtml", education.ContinuingEducationList)
 	if err != nil {
 		log.Println(err)
 		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
@@ -124,4 +130,12 @@ func (h *Handler) notfound(w http.ResponseWriter, _ *http.Request) {
 		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
 		return
 	}
+}
+
+func newStaticHandler() (http.Handler, error) {
+	lol, err := fs.Sub(static, "static")
+	if err != nil {
+		return nil, err
+	}
+	return http.FileServer(http.FS(lol)), nil
 }
