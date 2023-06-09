@@ -4,19 +4,31 @@
     <head>
         <title>Charles Pustejovsky | Go Developer</title>
         <meta charset="UTF-8"/>
+        <link rel=stylesheet href="/static/bulma.css"/>
+        <link rel=stylesheet href="/static/styles.css"/>
         <meta name="description" content="Golang developer passionate about TDD, SQL, gRPC/protobuf, Distributed Systems, Kafka, etc." lang="en"/>
     </head>
     <body>
-    <nav role="navigation">
-        <div>
-            <h1>Cpustejovsky 👍</h1>
-            <ul>
-                <li><a href="/">home</a></li>
-                <li><a href="/about">about</a></li>
-                <li><a href="/projects">projects</a></li>
-                <li><a href="/reading">reading</a></li>
-                <li><a href="/resources">resources</a></li>
-            </ul>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="/">
+                <h1>Cpustejovsky 👍</h1>
+            </a>
+
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="site-navbar">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div id="site-navbar" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item" href="/about">About</a>
+                <a class="navbar-item" href="/projects">Projects</a>
+                <a class="navbar-item" href="/education">Continuing Education</a>
+                <a class="navbar-item" href="/resources">Resources</a>
+            </div>
         </div>
     </nav>
     <main>
