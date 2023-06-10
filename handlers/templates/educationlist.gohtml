@@ -1,0 +1,43 @@
+{{template "header" .}}
+<h1>Continuing Education</h1>
+<h2>Current Reading</h2>
+<div>{{range .Current}}
+        <hr/>
+        <h2>{{.Title}}</h2>
+        {{range .Paragraphs}}
+            <p>{{.}}</p>
+        {{end}}
+        <ul>{{range .Links}}
+                <p><strong><a target="_blank" rel="noreferrer noopener" href="{{.URL}}">
+                            {{.Text}}
+                        </a></strong></p>
+            {{end}}</ul>
+    {{end}}</div>
+<h2>Recurring Reading</h2>
+<div>{{range .Recurring}}
+        <hr/>
+        <h2>{{.Title}}</h2>
+        {{range .Paragraphs}}
+            <p>{{.}}</p>
+        {{end}}
+        <ul>{{range .Links}}
+                <p><strong><a target="_blank" rel="noreferrer noopener" href="{{.URL}}">
+                            {{.Text}}
+                        </a></strong></p>
+            {{end}}</ul>
+    {{end}}</div>
+<h2>Past Reading</h2>
+<div>{{range .Completed}}
+        <hr/>
+        <h2>{{.Title}}</h2>
+        {{range .Paragraphs}}
+            <p>{{.}}</p>
+        {{end}}
+        <ul>{{range .Links}}
+                <p><strong><a target="_blank" rel="noreferrer noopener" href="{{.URL}}">
+                            {{.Text}}
+                        </a></strong></p>
+            {{end}}</ul>
+    {{end}}</div>
+{{template "footer" .}}
+

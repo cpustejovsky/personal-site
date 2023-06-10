@@ -2,6 +2,8 @@ package handlers
 
 import (
 	"embed"
+	"encoding/json"
+	"errors"
 	"fmt"
 	"github.com/cpustejovsky/personal-site/domain/education"
 	"github.com/gorilla/mux"
@@ -19,6 +21,8 @@ var (
 	//go:embed "static/*"
 	static embed.FS
 )
+
+var ResourcesURl = "https://dev.to/api/articles/281175"
 
 type Handler struct {
 	http.Handler
@@ -106,7 +110,8 @@ func (h *Handler) projects(w http.ResponseWriter, _ *http.Request) {
 }
 
 func (h *Handler) education(w http.ResponseWriter, _ *http.Request) {
-	err := h.Renderer.RenderHTML(w, "education.gohtml", education.ContinuingEducationList)
+	categories := education.GetContinuingEducationCategories(education.ContinuingEducationList)
+	err := h.Renderer.RenderHTML(w, "educationlist.gohtml", categories)
 	if err != nil {
 		log.Println(err)
 		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
@@ -115,7 +120,13 @@ func (h *Handler) education(w http.ResponseWriter, _ *http.Request) {
 }
 
 func (h *Handler) resources(w http.ResponseWriter, _ *http.Request) {
-	err := h.Renderer.RenderHTML(w, "resources.gohtml", nil)
+	body, err := GetResourcesPage()
+	if err != nil {
+		log.Println(err)
+		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
+		return
+	}
+	err = h.Renderer.RenderHTML(w, "resources.gohtml", template.HTML(body))
 	if err != nil {
 		log.Println(err)
 		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
@@ -123,12 +134,37 @@ func (h *Handler) resources(w http.ResponseWriter, _ *http.Request) {
 	}
 }
 
+func GetResourcesPage() (string, error) {
+	res, err := http.Get(ResourcesURl)
+	if err != nil {
+		return "", err
+	}
+	defer res.Body.Close()
+	b, err := io.ReadAll(res.Body)
+	if err != nil {
+		return "", err
+	}
+	var m map[string]any
+	err = json.Unmarshal(b, &m)
+	if err != nil {
+		return "", err
+	}
+	body, ok := m["body_html"]
+	if !ok {
+		return "", errors.New("body not found")
+	}
+	htmlbody, ok := body.(string)
+	if !ok {
+		return "", nil
+	}
+	return htmlbody, nil
+}
+
 func (h *Handler) notfound(w http.ResponseWriter, _ *http.Request) {
 	err := h.Renderer.RenderHTML(w, "notfound.gohtml", nil)
 	if err != nil {
 		log.Println(err)
 		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
-		return
 	}
 }
 
