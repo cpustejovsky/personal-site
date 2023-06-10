@@ -1,0 +1,14 @@
+{{define "education"}}
+    <div>
+        <h3>{{.Title}}</h3>
+        {{range .Paragraphs}}
+            <p>{{.}}</p>
+        {{end}}
+        <ul>{{range .Links}}
+                <p><strong><a target="_blank" rel="noreferrer noopener" href="{{.URL}}">
+                            {{.Text}}
+                        </a></strong></p>
+            {{end}}</ul>
+    </div>
+{{end}}
+
