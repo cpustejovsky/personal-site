@@ -1,0 +1,44 @@
+@charset "utf-8";
+
+$family-monospace: "JetBrains Mono", "Ubuntu Mono", monospace;
+$title-family: $family-monospace;
+$title-color: black;
+
+@import "bulma.sass";
+
+.title * {
+    color: black;
+}
+
+html {
+    min-height: 100vh;
+}
+
+body {
+    min-height: 100vh; /* this helps with the sticky footer */
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.navbar-menu.is-active {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+main {
+    min-height: calc(100vh - 4rem - 3.25rem); /* this leaves space for the sticky footer */
+    padding: 0 2rem;
+    background-color: white;
+}
+
+footer {
+    min-height:2.5rem;
+    background-color: #fafafa;
+    padding: 1.5rem;
+}
