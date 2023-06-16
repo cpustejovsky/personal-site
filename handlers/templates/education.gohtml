@@ -1,13 +1,13 @@
 {{define "education"}}
-    <div>
-        <h3>{{.Title}}</h3>
+    <div class="box">
+        <h4 class="title is-4"><a target="_blank" rel="noreferrer noopener" href="{{.Link}}">{{.Title}}</a></h4>
         {{range .Paragraphs}}
             <p>{{.}}</p>
         {{end}}
-        <ul>{{range .Links}}
-                <p><strong><a target="_blank" rel="noreferrer noopener" href="{{.URL}}">
+        <ul>{{range .CTAs}}
+                <p><a target="_blank" rel="noreferrer noopener" href="{{.URL}}">
                             {{.Text}}
-                        </a></strong></p>
+                        </a></p>
             {{end}}</ul>
     </div>
 {{end}}

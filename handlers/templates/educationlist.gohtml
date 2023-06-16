@@ -1,18 +1,22 @@
 {{template "header" .}}
-<h1>Continuing Education</h1>
-<h2>Current Reading</h2>
-<hr/>
-{{range .Current}}
-{{template "education" .}}
-{{end}}
-<h2>Recurring Reading</h2>
-<hr/>
-{{range .Recurring}}
-{{template "education" .}}
-{{end}}
-<h2>Past Reading</h2>
-<hr/>
-{{range .Completed}}
-{{template "education" .}}
+<h2 class="title is-2">Continuing Education</h2>
+<hr />
+<h3 class="title is-3">Current Reading</h3>
+<div class="section">
+    {{range .Current}}
+        {{template "education" .}}
     {{end}}
+</div>
+<h3 class="title is-3">Recurring Reading</h3>
+<div class="section">
+    {{range .Recurring}}
+        {{template "education" .}}
+    {{end}}
+</div>
+<h3 class="title is-3">Past Reading</h3>
+<div class="section">
+    {{range .Completed}}
+        {{template "education" .}}
+    {{end}}
+</div>
 {{template "footer" .}}

@@ -47,7 +47,6 @@ func New() (*Handler, error) {
 
 	router.HandleFunc("/", handler.index).Methods(http.MethodGet)
 	router.HandleFunc("/about", handler.about).Methods(http.MethodGet)
-	router.HandleFunc("/projects", handler.projects).Methods(http.MethodGet)
 	router.HandleFunc("/education", handler.education).Methods(http.MethodGet)
 	router.HandleFunc("/resources", handler.resources).Methods(http.MethodGet)
 	router.PathPrefix("/static/").Handler(http.StripPrefix("/static/", staticHandler))
@@ -93,15 +92,6 @@ func (h *Handler) index(w http.ResponseWriter, _ *http.Request) {
 
 func (h *Handler) about(w http.ResponseWriter, _ *http.Request) {
 	err := h.Renderer.RenderHTML(w, "about.gohtml", nil)
-	if err != nil {
-		log.Println(err)
-		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
-		return
-	}
-}
-
-func (h *Handler) projects(w http.ResponseWriter, _ *http.Request) {
-	err := h.Renderer.RenderHTML(w, "projects.gohtml", nil)
 	if err != nil {
 		log.Println(err)
 		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
