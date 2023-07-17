@@ -6,6 +6,7 @@ import (
 	"errors"
 	"fmt"
 	"github.com/cpustejovsky/personal-site/domain/education"
+	"github.com/cpustejovsky/personal-site/domain/lifetogether"
 	"github.com/gorilla/mux"
 	"html/template"
 	"io"
@@ -49,6 +50,8 @@ func New() (*Handler, error) {
 	router.HandleFunc("/about", handler.about).Methods(http.MethodGet)
 	router.HandleFunc("/education", handler.education).Methods(http.MethodGet)
 	router.HandleFunc("/resources", handler.resources).Methods(http.MethodGet)
+	router.HandleFunc("/ltc", handler.ltc).Methods(http.MethodGet)
+	router.HandleFunc("/ltc", handler.updateltc).Methods(http.MethodPut)
 	router.PathPrefix("/static/").Handler(http.StripPrefix("/static/", staticHandler))
 	router.NotFoundHandler = http.HandlerFunc(handler.notfound)
 
@@ -97,6 +100,60 @@ func (h *Handler) about(w http.ResponseWriter, _ *http.Request) {
 		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
 		return
 	}
+}
+
+func (h *Handler) ltc(w http.ResponseWriter, _ *http.Request) {
+	err := h.Renderer.RenderHTML(w, "ltc.gohtml", nil)
+	if err != nil {
+		log.Println(err)
+		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
+		return
+	}
+}
+
+func (h *Handler) updateltc(w http.ResponseWriter, r *http.Request) {
+	err := r.ParseForm()
+	if err != nil {
+		log.Println(err)
+		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
+		return
+	}
+	yourName := r.PostForm.Get("yourName")
+	otherName := r.PostForm.Get("otherName")
+	yourBirthday, err := time.Parse(time.DateOnly, r.PostForm.Get("yourBirthday"))
+	if err != nil {
+		log.Println(err)
+		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
+		return
+	}
+	otherBirthday, err := time.Parse(time.DateOnly, r.PostForm.Get("otherBirthday"))
+	if err != nil {
+		log.Println(err)
+		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
+		return
+	}
+	dateMet, err := time.Parse(time.DateOnly, r.PostForm.Get("dateMet"))
+	if err != nil {
+		log.Println(err)
+		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
+		return
+	}
+	in := lifetogether.Input{
+		YourName:      yourName,
+		OtherName:     otherName,
+		YourBirthday:  yourBirthday,
+		OtherBirthday: otherBirthday,
+		DateMet:       dateMet,
+		DateDating:    nil,
+		DateMarried:   nil,
+	}
+	out, err := lifetogether.CalculateNow(in)
+	if err != nil {
+		log.Println(err)
+		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
+		return
+	}
+	log.Printf("%v", out)
 }
 
 func (h *Handler) education(w http.ResponseWriter, _ *http.Request) {

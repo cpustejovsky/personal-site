@@ -1,0 +1,38 @@
+{{template "header" .}}
+<h2 class="title is-2">Life Together Calculator</h2>
+<div hx-target="this">
+    <div><label>First Name</label>: Joe</div>
+    <div><label>Last Name</label>: Blow</div>
+    <div><label>Email</label>: joe@blow.com</div>
+</div>
+<form hx-put="/ltc" hx-target="this">
+    <div>
+        <label>Your Name</label>
+        <input type="text" name="yourName" value="Aragorn">
+    </div>
+    <div>
+        <label>Other Person's Name</label>
+        <input type="text" name="otherName" value="Arwen">
+    </div>
+    <div class="form-group">
+        <label>Your Birthday</label>
+        <input type="date" name="yourBirthday" value="1892-01-03">
+    </div>
+    <div class="form-group">
+        <label>Other Person's Birthday</label>
+        <input type="date" name="otherBirthday" value="1889-01-21">
+    </div>
+    <div class="form-group">
+        <label>Date Y'all Met</label>
+        <input type="date" name="dateMet" value="1908-01-01"></div>
+    <div class="form-group">
+        <label>Date Y'all Started Dating (if applicable)</label>
+        <input type="date" name="dateDating">
+    </div>
+    <div class="form-group">
+        <label>Date Y'all Got Married (if applicable)</label>
+        <input type="date" name="dateMarried">
+    </div>
+    <button class="btn">Calculate</button>
+</form>
+{{template "footer" .}}
