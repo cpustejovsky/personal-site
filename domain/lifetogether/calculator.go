@@ -18,13 +18,13 @@ type Input struct {
 }
 
 type Output struct {
-	YourName              string
-	OtherName             string
-	YourPercentTogether   float64
-	OtherPerecentTogether float64
-	MetDuration           int
-	DatingDuration        *int
-	MarriedDuration       *int
+	YourName             string
+	OtherName            string
+	YourPercentTogether  float64
+	OtherPercentTogether float64
+	MetDuration          int
+	DatingDuration       *int
+	MarriedDuration      *int
 }
 
 //TODO: create error structs to store information
@@ -62,7 +62,7 @@ func Calculate(t time.Time, in Input) (*Output, error) {
 	yourAlive := float64(CalculateDayDuration(t, in.YourBirthday))
 	otherAlive := float64(CalculateDayDuration(t, in.OtherBirthday))
 	out.YourPercentTogether = round(metDurationFloat/yourAlive*100, 2)
-	out.OtherPerecentTogether = round(metDurationFloat/otherAlive*100, 2)
+	out.OtherPercentTogether = round(metDurationFloat/otherAlive*100, 2)
 
 	//Calculate for optional parameters
 	if in.DateDating != nil {
