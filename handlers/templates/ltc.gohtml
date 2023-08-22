@@ -1,6 +1,6 @@
 {{template "header" .}}
 <h2 class="title is-2">Life Together Calculator</h2>
-<div hx-target="this">
+<div>
     <p>{{.YourName}} has known {{.OtherName}} {{.YourPercentTogether}}% of their life.</p>
     <p>{{.OtherName}} has known {{.OtherName}} {{.OtherPercentTogether}}% of their life.</p>
     <p>They met {{.MetDuration}} days ago</p>
@@ -11,7 +11,7 @@
         <p>They started dating {{.MarriedDuration}} days ago</p>
     {{end}}
 </div>
-<form hx-put="/ltc" hx-target="this">
+<form action="/ltc/calculate" method="post">
     <div>
         <label>Your Name</label>
         <input class="input" type="text" name="yourName" value="Aragorn">

@@ -51,7 +51,7 @@ func New() (*Handler, error) {
 	router.HandleFunc("/education", handler.education).Methods(http.MethodGet)
 	router.HandleFunc("/resources", handler.resources).Methods(http.MethodGet)
 	router.HandleFunc("/ltc", handler.ltc).Methods(http.MethodGet)
-	router.HandleFunc("/ltc", handler.updateltc).Methods(http.MethodPut)
+	router.HandleFunc("/ltc/calculate", handler.updateltc).Methods(http.MethodPost)
 	router.PathPrefix("/static/").Handler(http.StripPrefix("/static/", staticHandler))
 	router.NotFoundHandler = http.HandlerFunc(handler.notfound)
 
@@ -118,6 +118,7 @@ func (h *Handler) updateltc(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
 		return
 	}
+	var dateDating, dateMarried time.Time
 	yourName := r.PostForm.Get("yourName")
 	otherName := r.PostForm.Get("otherName")
 	yourBirthday, err := time.Parse(time.DateOnly, r.PostForm.Get("yourBirthday"))
@@ -138,14 +139,32 @@ func (h *Handler) updateltc(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
 		return
 	}
+	if r.PostForm.Get("dateDating") != "" {
+		dateDating, err = time.Parse(time.DateOnly, r.PostForm.Get("dateDating"))
+		if err != nil {
+			log.Println(err)
+			http.Error(w, "Internal Server Error", http.StatusInternalServerError)
+			return
+		}
+	}
+
+	if r.PostForm.Get("dateMarried") != "" {
+		dateMarried, err = time.Parse(time.DateOnly, r.PostForm.Get("dateMarried"))
+		if err != nil {
+			log.Println(err)
+			http.Error(w, "Internal Server Error", http.StatusInternalServerError)
+			return
+		}
+	}
+
 	in := lifetogether.Input{
 		YourName:      yourName,
 		OtherName:     otherName,
 		YourBirthday:  yourBirthday,
 		OtherBirthday: otherBirthday,
 		DateMet:       dateMet,
-		DateDating:    nil,
-		DateMarried:   nil,
+		DateDating:    &dateDating,
+		DateMarried:   &dateMarried,
 	}
 	out, err := lifetogether.CalculateNow(in)
 	if err != nil {
@@ -153,7 +172,12 @@ func (h *Handler) updateltc(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
 		return
 	}
-	log.Printf("%v", out)
+	err = h.Renderer.RenderHTML(w, "ltc.gohtml", out)
+	if err != nil {
+		log.Println(err)
+		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
+		return
+	}
 }
 
 func (h *Handler) education(w http.ResponseWriter, _ *http.Request) {

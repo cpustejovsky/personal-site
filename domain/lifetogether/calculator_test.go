@@ -26,13 +26,13 @@ func TestCalculate(t *testing.T) {
 	otherPercentTogether := 32.52
 
 	want := &lifetogether.Output{
-		YourName:              ccp,
-		OtherName:             cep,
-		YourPercentTogether:   yourPercentTogether,
-		OtherPerecentTogether: otherPercentTogether,
-		MetDuration:           metDuration,
-		DatingDuration:        &datingDuration,
-		MarriedDuration:       &marriedDuration,
+		YourName:             ccp,
+		OtherName:            cep,
+		YourPercentTogether:  yourPercentTogether,
+		OtherPercentTogether: otherPercentTogether,
+		MetDuration:          metDuration,
+		DatingDuration:       &datingDuration,
+		MarriedDuration:      &marriedDuration,
 	}
 
 	t.Run("Correct Input returns expected output and nil error", func(t *testing.T) {
