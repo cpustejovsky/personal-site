@@ -169,13 +169,13 @@ func (h *Handler) education(w http.ResponseWriter, _ *http.Request) {
 func (h *Handler) resources(w http.ResponseWriter, _ *http.Request) {
 	body, err := GetResourcesPage()
 	if err != nil {
-		log.Println(err)
+		log.Println("error getting resource page", err)
 		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
 		return
 	}
 	err = h.Renderer.RenderHTML(w, "resources.gohtml", template.HTML(body))
 	if err != nil {
-		log.Println(err)
+		log.Println("error rendering resource page", err)
 		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
 		return
 	}
