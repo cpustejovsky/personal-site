@@ -42,6 +42,7 @@ func GetContinuingEducationCategories(list []ContinuingEducation) ContinuingEduc
 
 var ContinuingEducationList = []ContinuingEducation{
 	//goBook,
+	Proofs,
 	MITOCW,
 	//LittleSchemer,
 	dddGo,
@@ -51,9 +52,25 @@ var ContinuingEducationList = []ContinuingEducation{
 	tddGo,
 	concurrencyGo,
 	pragProg,
-	scrum,
 	DesertFathers,
 	letsGo,
+}
+
+var Proofs = ContinuingEducation{
+	Finished:  false,
+	Recurring: false,
+	Title:     "Proofs: A Long-Form Mathematics Textbook",
+	Link:      "https://longformmath.com/proofs-home",
+	Paragraphs: []template.HTML{
+		`Jay Cummings wrote Proofs with the goal of making mathematical education more accessible. His step-by-step examples help readers grok set theory, induction, proofs, relations, etc.`,
+		`Proofs provides an excellent foundation for a computer science education.`,
+	},
+	CTAs: []CTA{
+		{
+			Text: "Buy the Book",
+			URL:  "https://www.amazon.com/Proofs-Long-Form-Mathematics-Textbook-Math/dp/B08T8JCVF1/ref=sr_1_1?dchild=1&keywords=proofs+a+long-form+mathematics+textbook&sr=8-1",
+		},
+	},
 }
 
 var MITOCW = ContinuingEducation{
@@ -62,20 +79,11 @@ var MITOCW = ContinuingEducation{
 	Title:     "MIT Opencourseware",
 	Link:      "https://ocw.mit.edu/",
 	Paragraphs: []template.HTML{
-		`I'm filling in the gaps of my Liberal Arts education by auditing MIT Computer Science
-						courses.`,
-		`I <a target="_blank" rel="noreferrer noopener"  href="https://dev.
-to/cpustejovsky/do-leetcode-assessments-make-sense-1kp6">am skeptical of LeetCode assessments </a> for developers. However, 
-I appreciate the need for senior developers to understand Data Structures and Algorithms. 
-That knowledge helps us build complex applications than run efficiently.`,
+		`I'm auditing MIT 6.006 (Introduction to Algorithms) to fill in my computer science gaps. The projects that excite me need developers who grok data structures and algorithms.  That knowledge helps us build complex, efficient applications.`,
 	},
 	CTAs: []CTA{
 		{
-			Text: "Mathematics For Computer Science",
-			URL:  "https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-fall-2010/",
-		},
-		{
-			Text: "Introduction to Algorithms",
+			Text: "MIT 6.OO6",
 			URL:  "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/",
 		},
 	},
@@ -110,6 +118,10 @@ var letsGo = ContinuingEducation{
 	Recurring: false,
 	Title:     "Let's Go",
 	Link:      "https://lets-go.alexedwards.net/",
+	Paragraphs: []template.HTML{
+		`This book is absolutely wonderful for any newcomer to Go wanting to dive into web development.`,
+		`Alex Edwards shows you how to build scalable, composable, maintainable backends with Go.`,
+	},
 	CTAs: []CTA{
 		{
 			Text: "Review", URL: "https://dev.to/cpustejovsky/let-s-go-book-review-1909",
@@ -126,12 +138,12 @@ var pragProg = ContinuingEducation{
 		better provide value with the software they help create.Now that I've finished reading it, I'm slowly going
 		back through it to really grok its lessons.`,
 	},
-	CTAs: []CTA{
-		{
-			Text: "Review TODO",
-			URL:  "foobar",
-		},
-	},
+	//CTAs: []CTA{
+	//	{
+	//		Text: "Review TODO",
+	//		URL:  "foobar",
+	//	},
+	//},
 }
 var DesertFathers = ContinuingEducation{
 	Finished:  true,
@@ -148,23 +160,17 @@ var DesertFathers = ContinuingEducation{
 	},
 }
 
-var scrum = ContinuingEducation{
-	Finished:  true,
-	Recurring: false,
-	Title:     "Scrum: The Art of Doing Twice the Work in Half the Time",
-	Link:      "https://www.scruminc.com/new-scrum-the-book/",
-	CTAs: []CTA{
-		{
-			Text: "Review",
-			URL:  "https://www.amazon.com/review/R1YIDZM7XANJFG/ref=cm_cr_srp_d_rdp_perm?ie=UTF8",
-		},
-	},
-}
 var tddGo = ContinuingEducation{
 	Finished:  true,
 	Recurring: false,
 	Title:     "Learn Go with tests",
 	Link:      "https://quii.gitbook.io/learn-go-with-tests/",
+	Paragraphs: []template.HTML{
+		`This is the book that taught me Test-Driven Development (TDD). Chris James begins with the basics of Go. 
+He then goes step-by-step through the process of building a fully-functioning application. 
+All throughout he teaches test-driven development. He points to best practices and anti-patterns to avoid. 
+It remains my go-to recommendation for anyone interested in Go or TDD.`,
+	},
 	CTAs: []CTA{
 		{
 			Text: "Review", URL: "https://dev.to/cpustejovsky/learn-go-with-tests-book-review-na4",
@@ -187,12 +193,12 @@ var dds = ContinuingEducation{
 	build a variety of systems.
 	`,
 	},
-	CTAs: []CTA{
-		{
-			Text: "Review TODO",
-			URL:  "foobar",
-		},
-	},
+	//CTAs: []CTA{
+	//	{
+	//		Text: "Review TODO",
+	//		URL:  "foobar",
+	//	},
+	//},
 }
 
 var kafka = ContinuingEducation{
@@ -213,12 +219,12 @@ var kafka = ContinuingEducation{
 	for how to build and maintain high performance and reliable Kafka producers and consumers.
 	`,
 	},
-	CTAs: []CTA{
-		{
-			Text: "Review TODO",
-			URL:  "foobar",
-		},
-	},
+	//CTAs: []CTA{
+	//	{
+	//		Text: "Review TODO",
+	//		URL:  "foobar",
+	//	},
+	//},
 }
 
 var concurrencyGo = ContinuingEducation{
@@ -237,12 +243,12 @@ var concurrencyGo = ContinuingEducation{
 	`,
 		`This is definitely a book I'll be rereading in the future.`,
 	},
-	CTAs: []CTA{
-		{
-			Text: "Review TODO",
-			URL:  "foobar",
-		},
-	},
+	//CTAs: []CTA{
+	//	{
+	//		Text: "Review TODO",
+	//		URL:  "foobar",
+	//	},
+	//},
 }
 
 var dddGo = ContinuingEducation{
@@ -250,6 +256,12 @@ var dddGo = ContinuingEducation{
 	Recurring: false,
 	Title:     "Domain Driven Design with Golang",
 	Link:      "https://www.packtpub.com/product/domain-driven-design-with-golang/9781804613450",
+	Paragraphs: []template.HTML{
+		`
+	Working at Groundfloor introduced me to Domain Driven Design (DDD) in 2022. 
+	I wanted to dig deeper. Since Eric Evans wrote the Big Blue Book with classes in mind, a DDD book written specifically for Go developers interested me. 
+	Matt Boyle's book does just that, translating DDD concepts into idiomatic Go. `,
+	},
 	CTAs: []CTA{
 		{
 			Text: "Review",
