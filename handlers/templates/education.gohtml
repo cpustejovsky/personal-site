@@ -3,7 +3,9 @@
         <h4 class="title is-4"><a target="_blank" rel="noreferrer noopener" href="{{.Link}}">{{.Title}}</a></h4>
         {{range .Paragraphs}}
             <p>{{.}}</p>
+            <br>
         {{end}}
+        <br/>
         <ul>{{range .CTAs}}
                 <p><a target="_blank" rel="noreferrer noopener" href="{{.URL}}">
                             {{.Text}}
