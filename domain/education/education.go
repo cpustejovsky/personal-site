@@ -135,7 +135,7 @@ var pragProg = ContinuingEducation{
 	Link:      "https://pragprog.com/book/tpp20/the-pragmatic-programmer-20th-anniversary-edition",
 	Paragraphs: []template.HTML{
 		`This book is filled with wisdom and best practices that any programmer can use to improve their craft and
-		better provide value with the software they help create.Now that I've finished reading it, I'm slowly going
+		better provide value with the software they help create. Now that I've finished reading it, I'm slowly going
 		back through it to really grok its lessons.`,
 	},
 	//CTAs: []CTA{
@@ -151,9 +151,8 @@ var DesertFathers = ContinuingEducation{
 	Title:     "The Alphabetical Sayings of the Desert Fathers",
 	Link:      "https://svspress.com/give-me-a-word-the-alphabetical-sayings-of-the-desert-fathers/",
 	Paragraphs: []template.HTML{
-		`
-		The Desert Fathers of Christianity hold a special place in my heart.Their lessons of self-discipline,
-		humility, perseverance, and not judging others help me not only as a developer, but as a human being.It is
+		`The Desert Fathers of Christianity hold a special place in my heart.Their lessons of self-discipline,
+		humility, perseverance, and not judging others help me not only as a developer, but as a human being. It is
 		why I read some of their sayings at the beginning of each day, to center and focus me for the day ahead,
 		with all the challenges it may bring.
 		`,
@@ -163,7 +162,7 @@ var DesertFathers = ContinuingEducation{
 var tddGo = ContinuingEducation{
 	Finished:  true,
 	Recurring: false,
-	Title:     "Learn Go with tests",
+	Title:     "Learn Go with Tests",
 	Link:      "https://quii.gitbook.io/learn-go-with-tests/",
 	Paragraphs: []template.HTML{
 		`This is the book that taught me Test-Driven Development (TDD). Chris James begins with the basics of Go. 
@@ -186,7 +185,7 @@ var dds = ContinuingEducation{
 	Paragraphs: []template.HTML{
 		`
 	Helping build an event driven distributed systems showed me many of the gaps I have and infrastructure
-	conText I lacked. I decided to go through this book to remedy that.
+	context I lacked. I decided to go through this book to remedy that.
 	`,
 		`
 	So far, it has been a wonderful and practical survey of various ways to use containers and orchestration to
