@@ -100,4 +100,42 @@ func TestCalculate(t *testing.T) {
 			t.Fatal("expected error")
 		}
 	})
+	t.Run("Zero Time DateDating results in nil for DatingDuration", func(t *testing.T) {
+		var zeroTime time.Time
+		in := lifetogether.Input{
+			YourName:      ccp,
+			OtherName:     cep,
+			YourBirthday:  yourBirthday,
+			OtherBirthday: otherBirthday,
+			DateMet:       dateMet,
+			DateDating:    &zeroTime,
+			DateMarried:   &married,
+		}
+		out, err := lifetogether.Calculate(testTime, in)
+		if err != nil {
+			t.Fatal(err)
+		}
+		if out.DatingDuration != nil {
+			t.Fatalf("got: %v, wanted: %v", out.DatingDuration, nil)
+		}
+	})
+	t.Run("Zero Time DateMarried results in nil for MarriedDuration", func(t *testing.T) {
+		var zeroTime time.Time
+		in := lifetogether.Input{
+			YourName:      ccp,
+			OtherName:     cep,
+			YourBirthday:  yourBirthday,
+			OtherBirthday: otherBirthday,
+			DateMet:       dateMet,
+			DateDating:    &dating,
+			DateMarried:   &zeroTime,
+		}
+		out, err := lifetogether.Calculate(testTime, in)
+		if err != nil {
+			t.Fatal(err)
+		}
+		if out.MarriedDuration != nil {
+			t.Fatalf("got: %v, wanted: %v", out.MarriedDuration, nil)
+		}
+	})
 }
