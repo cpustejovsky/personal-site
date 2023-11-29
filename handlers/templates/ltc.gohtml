@@ -1,11 +1,24 @@
 {{template "header" .}}
 <h2 class="title is-2">Life Together Calculator</h2>
 <div>
-    <p>{{.YourName}} has known {{.OtherName}} {{.YourPercentTogether}}% of their life.</p>
-    <p>{{.OtherName}} has known {{.OtherName}} {{.OtherPercentTogether}}% of their life.</p>
-    <p>They met {{.MetDuration}} days ago</p>
+    <p>Add some mathematical precision to your friendship || relationship || marriage.</p>
+</div>
+<br>
+<div>
+    {{if .YourName}}
+        <h3 class="title is-3">Results</h3>
+    {{end}}
+    {{if .YourName}}
+        <p>{{.YourName}} has known {{.OtherName}} {{.YourPercentTogether}}% of their life.</p>
+    {{end}}
+    {{if .OtherName}}
+        <p>{{.YourName}} has known {{.OtherName}} {{.YourPercentTogether}}% of their life.</p>
+    {{end}}
+    {{if .MetDuration}}
+        <p>They met {{.MetDuration}} days ago</p>
+    {{end}}
     {{if .DatingDuration}}
-    <p>They started dating {{.DatingDuration}} days ago</p>
+        <p>They started dating {{.DatingDuration}} days ago</p>
     {{end}}
     {{if .MarriedDuration}}
         <p>They got married {{.MarriedDuration}} days ago</p>
