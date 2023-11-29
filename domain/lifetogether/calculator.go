@@ -56,18 +56,18 @@ func Calculate(t time.Time, in Input) (*Output, error) {
 	}
 
 	//Calculate duration since meeting
-	md, err := CalculateDayDuration(t, in.DateMet)
+	md, err := calculateDayDuration(t, in.DateMet)
 	if err != nil {
 		return nil, fmt.Errorf("date met error %w", err)
 	}
 	out.MetDuration = md
 	//Calculate percentage person and other have known each other
 	metDurationFloat := float64(md)
-	yb, err := CalculateDayDuration(t, in.YourBirthday)
+	yb, err := calculateDayDuration(t, in.YourBirthday)
 	if err != nil {
 		return nil, fmt.Errorf("your birthday error %w", err)
 	}
-	ob, err := CalculateDayDuration(t, in.OtherBirthday)
+	ob, err := calculateDayDuration(t, in.OtherBirthday)
 	if err != nil {
 		return nil, fmt.Errorf("other birthday error %w", err)
 	}
@@ -77,13 +77,13 @@ func Calculate(t time.Time, in Input) (*Output, error) {
 	out.OtherPercentTogether = round(metDurationFloat/otherAlive*100, 2)
 
 	//Calculate for optional parameters
-	dd, err := CalculateDayDuration(t, *in.DateDating)
+	dd, err := calculateDayDuration(t, *in.DateDating)
 	if err != nil {
 		out.DatingDuration = nil
 	} else {
 		out.DatingDuration = &dd
 	}
-	md, err = CalculateDayDuration(t, *in.DateMarried)
+	md, err = calculateDayDuration(t, *in.DateMarried)
 	if err != nil {
 		out.MarriedDuration = nil
 	} else {
@@ -97,7 +97,7 @@ func round(num float64, decimals int) float64 {
 	return math.Round(num*precision) / precision
 }
 
-func CalculateDayDuration(t time.Time, dur time.Time) (int, error) {
+func calculateDayDuration(t time.Time, dur time.Time) (int, error) {
 	if dur.IsZero() {
 		return -1, errors.New("duration is zero")
 	}
