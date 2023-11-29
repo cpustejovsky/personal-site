@@ -8,9 +8,10 @@
     <p>They started dating {{.DatingDuration}} days ago</p>
     {{end}}
     {{if .MarriedDuration}}
-        <p>They started dating {{.MarriedDuration}} days ago</p>
+        <p>They got married {{.MarriedDuration}} days ago</p>
     {{end}}
 </div>
+<br>
 <form action="/ltc/calculate" method="post">
     <div>
         <label>Your Name</label>
