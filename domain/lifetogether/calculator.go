@@ -2,6 +2,7 @@ package lifetogether
 
 import (
 	"errors"
+	"fmt"
 	"math"
 	"time"
 )
@@ -55,23 +56,38 @@ func Calculate(t time.Time, in Input) (*Output, error) {
 	}
 
 	//Calculate duration since meeting
-	out.MetDuration = CalculateDayDuration(t, in.DateMet)
-
+	md, err := CalculateDayDuration(t, in.DateMet)
+	if err != nil {
+		return nil, fmt.Errorf("date met error %w", err)
+	}
+	out.MetDuration = md
 	//Calculate percentage person and other have known each other
-	metDurationFloat := float64(out.MetDuration)
-	yourAlive := float64(CalculateDayDuration(t, in.YourBirthday))
-	otherAlive := float64(CalculateDayDuration(t, in.OtherBirthday))
+	metDurationFloat := float64(md)
+	yb, err := CalculateDayDuration(t, in.YourBirthday)
+	if err != nil {
+		return nil, fmt.Errorf("your birthday error %w", err)
+	}
+	ob, err := CalculateDayDuration(t, in.OtherBirthday)
+	if err != nil {
+		return nil, fmt.Errorf("other birthday error %w", err)
+	}
+	yourAlive := float64(yb)
+	otherAlive := float64(ob)
 	out.YourPercentTogether = round(metDurationFloat/yourAlive*100, 2)
 	out.OtherPercentTogether = round(metDurationFloat/otherAlive*100, 2)
 
 	//Calculate for optional parameters
-	if in.DateDating != nil {
-		d := CalculateDayDuration(t, *in.DateDating)
-		out.DatingDuration = &d
+	dd, err := CalculateDayDuration(t, *in.DateDating)
+	if err != nil {
+		out.DatingDuration = nil
+	} else {
+		out.DatingDuration = &dd
 	}
-	if in.DateMarried != nil {
-		d := CalculateDayDuration(t, *in.DateMarried)
-		out.MarriedDuration = &d
+	md, err = CalculateDayDuration(t, *in.DateMarried)
+	if err != nil {
+		out.MarriedDuration = nil
+	} else {
+		out.MarriedDuration = &md
 	}
 	return &out, nil
 }
@@ -81,8 +97,11 @@ func round(num float64, decimals int) float64 {
 	return math.Round(num*precision) / precision
 }
 
-func CalculateDayDuration(t time.Time, dur time.Time) int {
+func CalculateDayDuration(t time.Time, dur time.Time) (int, error) {
+	if dur.IsZero() {
+		return -1, errors.New("duration is zero")
+	}
 	hoursDur := t.Sub(dur).Hours()
-	metdays := math.Floor(hoursDur / 24.0)
-	return int(metdays)
+	days := math.Floor(hoursDur / 24.0)
+	return int(days), nil
 }

@@ -6,9 +6,8 @@ import (
 )
 
 func TestGetResourcesPage(t *testing.T) {
-	body, err := handlers.GetResourcesPage()
+	_, err := handlers.GetResourcesPage()
 	if err != nil {
 		t.Fatal(err)
 	}
-	t.Log(body)
 }
