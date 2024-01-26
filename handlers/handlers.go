@@ -16,6 +16,8 @@ import (
 	"time"
 )
 
+const ResourcesURl = "https://dev.to/api/articles/281175"
+
 var (
 	//go:embed "templates/*"
 	templates embed.FS
@@ -23,7 +25,9 @@ var (
 	static embed.FS
 )
 
-var ResourcesURl = "https://dev.to/api/articles/281175"
+type Renderer struct {
+	templ *template.Template
+}
 
 type Handler struct {
 	http.Handler
@@ -31,19 +35,20 @@ type Handler struct {
 }
 
 func New() (*Handler, error) {
-	router := mux.NewRouter()
 	r, err := NewRenderer()
 	if err != nil {
 		return nil, err
 	}
-	handler := &Handler{
-		Handler:  router,
-		Renderer: *r,
-	}
 
 	staticHandler, err := newStaticHandler()
 	if err != nil {
-		return nil, fmt.Errorf("problem making static resources handler: %w", err)
+		return nil, fmt.Errorf("creating static handler failed:\t%w", err)
+	}
+
+	router := mux.NewRouter()
+	handler := &Handler{
+		Handler:  router,
+		Renderer: *r,
 	}
 
 	router.HandleFunc("/", handler.index).Methods(http.MethodGet)
@@ -58,23 +63,18 @@ func New() (*Handler, error) {
 	return handler, nil
 }
 
-func currentYear() int {
-	return time.Now().UTC().Year()
-}
-
-type Renderer struct {
-	templ *template.Template
-}
-
 func NewRenderer() (*Renderer, error) {
 	fm := template.FuncMap{
-		"currentYear": currentYear,
+		"currentYear": func() int {
+			return time.Now().UTC().Year()
+		},
 	}
 
 	templ, err := template.New("base").Funcs(fm).ParseFS(templates, "templates/*.gohtml")
 	if err != nil {
 		return nil, err
 	}
+
 	return &Renderer{
 		templ: templ,
 	}, nil
