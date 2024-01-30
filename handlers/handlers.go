@@ -7,7 +7,6 @@ import (
 	"fmt"
 	"github.com/cpustejovsky/personal-site/domain/education"
 	"github.com/cpustejovsky/personal-site/domain/lifetogether"
-	"github.com/gorilla/mux"
 	"html/template"
 	"io"
 	"io/fs"
@@ -45,20 +44,18 @@ func New() (*Handler, error) {
 		return nil, fmt.Errorf("creating static handler failed:\t%w", err)
 	}
 
-	router := mux.NewRouter()
+	router := http.NewServeMux()
 	handler := &Handler{
 		Handler:  router,
 		Renderer: *r,
 	}
-
-	router.HandleFunc("/", handler.index).Methods(http.MethodGet)
-	router.HandleFunc("/about", handler.about).Methods(http.MethodGet)
-	router.HandleFunc("/education", handler.education).Methods(http.MethodGet)
-	router.HandleFunc("/resources", handler.resources).Methods(http.MethodGet)
-	router.HandleFunc("/ltc", handler.ltc).Methods(http.MethodGet)
-	router.HandleFunc("/ltc/calculate", handler.updateltc).Methods(http.MethodPost)
-	router.PathPrefix("/static/").Handler(http.StripPrefix("/static/", staticHandler))
-	router.NotFoundHandler = http.HandlerFunc(handler.notfound)
+	router.HandleFunc("/", handler.index)
+	router.HandleFunc("/about", handler.about)
+	router.HandleFunc("/education", handler.education)
+	router.HandleFunc("/resources", handler.resources)
+	router.HandleFunc("/ltc", handler.ltc)
+	router.HandleFunc("/ltc/calculate", handler.updateltc)
+	router.Handle("/static/", http.StripPrefix("/static/", staticHandler))
 
 	return handler, nil
 }
@@ -84,7 +81,11 @@ func (r *Renderer) RenderHTML(w io.Writer, name string, data any) error {
 	return r.templ.ExecuteTemplate(w, name, data)
 }
 
-func (h *Handler) index(w http.ResponseWriter, _ *http.Request) {
+func (h *Handler) index(w http.ResponseWriter, r *http.Request) {
+	if r.URL.Path != "/" {
+		h.notfound(w, r)
+		return
+	}
 	err := h.Renderer.RenderHTML(w, "index.gohtml", nil)
 	if err != nil {
 		log.Println(err)
