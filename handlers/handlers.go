@@ -2,17 +2,17 @@ package handlers
 
 import (
 	"embed"
-	"encoding/json"
-	"errors"
 	"fmt"
-	"github.com/cpustejovsky/personal-site/domain/education"
-	"github.com/cpustejovsky/personal-site/domain/lifetogether"
 	"html/template"
 	"io"
 	"io/fs"
 	"log"
 	"net/http"
+	"os"
 	"time"
+
+	"github.com/cpustejovsky/personal-site/domain/education"
+	"github.com/cpustejovsky/personal-site/domain/lifetogether"
 )
 
 const ResourcesURl = "https://dev.to/api/articles/281175"
@@ -207,29 +207,16 @@ func (h *Handler) resources(w http.ResponseWriter, _ *http.Request) {
 }
 
 func GetResourcesPage() (string, error) {
-	res, err := http.Get(ResourcesURl)
+	wd, err := os.Getwd()
 	if err != nil {
 		return "", err
 	}
-	defer res.Body.Close()
-	b, err := io.ReadAll(res.Body)
+	log.Println("working directory:\t", wd)
+	dat, err := os.ReadFile(wd + "/handlers/static/resources.html")
 	if err != nil {
 		return "", err
 	}
-	var m map[string]any
-	err = json.Unmarshal(b, &m)
-	if err != nil {
-		return "", err
-	}
-	body, ok := m["body_html"]
-	if !ok {
-		return "", errors.New("body not found")
-	}
-	htmlbody, ok := body.(string)
-	if !ok {
-		return "", nil
-	}
-	return htmlbody, nil
+	return string(dat), nil
 }
 
 func (h *Handler) notfound(w http.ResponseWriter, _ *http.Request) {
