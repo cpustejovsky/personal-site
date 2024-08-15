@@ -212,7 +212,7 @@ func GetResourcesPage() (string, error) {
 		return "", err
 	}
 	log.Println("working directory:\t", wd)
-	dat, err := os.ReadFile(wd + "/handlers/static/resources.html")
+	dat, err := os.ReadFile(wd + "/handlers/static/out/resources.html")
 	if err != nil {
 		return "", err
 	}
