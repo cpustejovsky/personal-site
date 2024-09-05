@@ -13,13 +13,22 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "race_relations.md",
+                "file": "technology.md",
                 "mode": "source",
                 "source": false
               }
             }
+          },
+          {
+            "id": "e9edcfbd4a357bbe",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "race_relations.md",
+                "file": "technology.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "race_relations.md",
+                "file": "technology.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "race_relations.md"
+                "file": "technology.md"
               }
             }
           }
@@ -146,11 +155,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "a03e9e83bb23a437",
+  "active": "e9edcfbd4a357bbe",
   "lastOpenFiles": [
-    "theology.md",
+    "technology.md",
     "race_relations.md",
-    "mental_health.md",
-    "technology.md"
+    "theology.md",
+    "mental_health.md"
   ]
 }

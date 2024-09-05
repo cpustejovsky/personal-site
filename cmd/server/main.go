@@ -3,7 +3,6 @@ package main
 import (
 	"context"
 	"flag"
-	"github.com/cpustejovsky/personal-site/handlers"
 	"log"
 	"log/slog"
 	"net"
@@ -12,6 +11,8 @@ import (
 	"os/signal"
 	"syscall"
 	"time"
+
+	"github.com/cpustejovsky/personal-site/handlers"
 )
 
 func main() {
@@ -28,7 +29,6 @@ func main() {
 		os.Exit(1)
 	}
 
-	slog.Info("Server Started", "network", *network, "address", *address)
 	h, err := handlers.New()
 	if err != nil {
 		log.Fatal(err)
@@ -40,7 +40,10 @@ func main() {
 	// run server in a goroutine so we can multiplex between signal and error
 	// handling below.
 	errCh := make(chan error, 1)
-	go func() { errCh <- svr.Serve(l) }()
+	go func() {
+		slog.Info("Server Started", "network", *network, "address", *address)
+		errCh <- svr.Serve(l)
+	}()
 
 	ctx, stop := signal.NotifyContext(context.Background(), syscall.SIGINT)
 	defer stop()

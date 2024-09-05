@@ -15,8 +15,6 @@ import (
 	"github.com/cpustejovsky/personal-site/domain/lifetogether"
 )
 
-const ResourcesURl = "https://dev.to/api/articles/281175"
-
 var (
 	//go:embed "templates/*"
 	templates embed.FS

@@ -2,14 +2,11 @@
     `<a name="Technology">`{=html}`</a>`{=html}](#technology){#toc-technology}
     -   [General
         `<a name="General">`{=html}`</a>`{=html}](#general){#toc-general}
-    -   [Architecture/Design
-        `<a name="Architecture">`{=html}`</a>`{=html}](#architecturedesign){#toc-architecturedesign}
+    -   [Git](#git){#toc-git}
     -   [Golang
         `<a name="Golang">`{=html}`</a>`{=html}](#golang){#toc-golang}
     -   [Testing
         `<a name="Testing">`{=html}`</a>`{=html}](#testing){#toc-testing}
-    -   [MongoDB
-        `<a name="MongoDB">`{=html}`</a>`{=html}](#mongodb){#toc-mongodb}
     -   [SQL `<a name="SQL">`{=html}`</a>`{=html}](#sql){#toc-sql}
 -   [Theology/Spirituality
     `<a name="Theology">`{=html}`</a>`{=html}](#theologyspirituality){#toc-theologyspirituality}
@@ -29,8 +26,14 @@
 -   [Why Floating Point Math is weird for
     computers](https://0.30000000000000004.com/)
 
-### Architecture/Design `<a name="Architecture">`{=html}`</a>`{=html}
+### Git
 
+-   [fetch all remote git
+    branches](https://stackoverflow.com/questions/10312521/how-do-i-fetch-all-git-branches)
+-   [global
+    gitignore](https://stackoverflow.com/questions/7335420/global-git-ignore)
+    \### Architecture/Design
+    `<a name="Architecture">`{=html}`</a>`{=html}
 -   <https://netflixtechblog.com/fault-tolerance-in-a-high-volume-distributed-system-91ab4faae74a>
 -   [SOLID Go
     Design](https://dave.cheney.net/2016/08/20/solid-go-design)
@@ -67,20 +70,25 @@
 -   [The Practical Test
     Pyramid](https://martinfowler.com/articles/practical-test-pyramid.html)
 
-### MongoDB `<a name="MongoDB">`{=html}`</a>`{=html}
-
--   [MongoDB Schema Design Best
-    Practices](https://www.mongodb.com/developer/article/mongodb-schema-design-best-practices/)
--   [MongoDB Schema Design
-    Anti-Patterns](https://www.mongodb.com/developer/article/schema-design-anti-pattern-summary/)
--   [MongoDB Building
-    Patterns](https://www.mongodb.com/blog/post/building-with-patterns-a-summary)
-
 ### SQL `<a name="SQL">`{=html}`</a>`{=html}
 
 -   [Four Different Kinds of Join](https://www.dofactory.com/sql/join)
-    ![Four Different Kinds of
-    Join](https://www.dofactory.com/img/sql/sql-joins.png)
+
+-   [Just Use Postgres for
+    Everything](https://www.amazingcto.com/postgres-for-everything/)
+
+-   [Top psql commands and flags you need to
+    know](https://hasura.io/blog/top-psql-commands-and-flags-you-need-to-know-postgresql)
+    \### MongoDB `<a name="MongoDB">`{=html}`</a>`{=html}
+
+-   [MongoDB Schema Design Best
+    Practices](https://www.mongodb.com/developer/article/mongodb-schema-design-best-practices/)
+
+-   [MongoDB Schema Design
+    Anti-Patterns](https://www.mongodb.com/developer/article/schema-design-anti-pattern-summary/)
+
+-   [MongoDB Building
+    Patterns](https://www.mongodb.com/blog/post/building-with-patterns-a-summary)
 
 ## Theology/Spirituality `<a name="Theology">`{=html}`</a>`{=html}
 
