@@ -1,6 +1,8 @@
 -   [Technology
     `<a name="Technology">`{=html}`</a>`{=html}](#technology){#toc-technology}
     -   [Communication](#communication){#toc-communication}
+    -   [General
+        `<a name="General">`{=html}`</a>`{=html}](#general){#toc-general}
     -   [Git](#git){#toc-git}
     -   [Architecture/Design
         `<a name="Architecture">`{=html}`</a>`{=html}](#architecturedesign){#toc-architecturedesign}
@@ -8,6 +10,7 @@
         `<a name="Golang">`{=html}`</a>`{=html}](#golang){#toc-golang}
     -   [Testing
         `<a name="Testing">`{=html}`</a>`{=html}](#testing){#toc-testing}
+    -   [REST APIs](#rest-apis){#toc-rest-apis}
     -   [SQL `<a name="SQL">`{=html}`</a>`{=html}](#sql){#toc-sql}
     -   [MongoDB
         `<a name="MongoDB">`{=html}`</a>`{=html}](#mongodb){#toc-mongodb}
@@ -30,8 +33,10 @@ directly.
     Language](https://www.orwellfoundation.com/the-orwell-foundation/orwell/essays-and-other-works/politics-and-the-english-language/)
 -   [Hemmingway Editor](https://hemingwayapp.com/)
 -   [Elements of Style by Strunk and
-    White](https://en.wikipedia.org/wiki/The_Elements_of_Style) \###
-    General `<a name="General">`{=html}`</a>`{=html}
+    White](https://en.wikipedia.org/wiki/The_Elements_of_Style)
+
+### General `<a name="General">`{=html}`</a>`{=html}
+
 -   [Regex 101](https://regex101.com/)
 -   [The Art of
     Googling](https://dev.to/lauragift21/the-art-of-googling-4c04)
@@ -83,6 +88,11 @@ directly.
         Meszaros](https://dev-to-uploads.s3.amazonaws.com/i/o837ynetmw2rhlf3armc.png)
 -   [The Practical Test
     Pyramid](https://martinfowler.com/articles/practical-test-pyramid.html)
+
+### REST APIs
+
+-   [path vs query
+    parameters](https://stackoverflow.com/a/31261026/7680271)
 
 ### SQL `<a name="SQL">`{=html}`</a>`{=html}
 

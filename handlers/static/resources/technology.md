@@ -6,6 +6,7 @@ Communication is just as important in technical roles as it is in any other. Her
 - [Politics and the English Language](https://www.orwellfoundation.com/the-orwell-foundation/orwell/essays-and-other-works/politics-and-the-english-language/)
 - [Hemmingway Editor](https://hemingwayapp.com/)
 - [Elements of Style by Strunk and White](https://en.wikipedia.org/wiki/The_Elements_of_Style)
+
 ### General <a name="General"></a>
 * [Regex 101](https://regex101.com/)
 * [The Art of Googling](https://dev.to/lauragift21/the-art-of-googling-4c04)
@@ -37,6 +38,9 @@ Communication is just as important in technical roles as it is in any other. Her
   * Gerard Meszaros's distinction between different "Test Doubles":
 ![five different types of test doubles according to Gerard Meszaros](https://dev-to-uploads.s3.amazonaws.com/i/o837ynetmw2rhlf3armc.png)
 * [The Practical Test Pyramid](https://martinfowler.com/articles/practical-test-pyramid.html)
+
+### REST APIs
+* [path vs query parameters](https://stackoverflow.com/a/31261026/7680271)
 
 ### SQL <a name="SQL"></a>
 * [Four Different Kinds of Join](https://www.dofactory.com/sql/join)
