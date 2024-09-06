@@ -2,7 +2,6 @@ package main
 
 import (
 	"context"
-	"flag"
 	"log"
 	"log/slog"
 	"net"
@@ -17,15 +16,24 @@ import (
 
 func main() {
 
-	// Configuration
-	network := flag.String("n", "tcp", "network to listen on")
-	address := flag.String("a", ":8080", "address to listen on")
-	flag.Parse()
+	// // Configuration
+	// network := flag.String("n", "tcp", "network to listen on")
+	// address := flag.String("a", ":8080", "address to listen on")
+	// flag.Parse()
 
-	l, err := net.Listen(*network, *address)
+	port := os.Getenv("PORT")
+	network := os.Getenv("NETWORK")
+	if len(network) == 0 {
+		network = "tcp"
+	}
+	if len(port) == 0 {
+		port = "8080"
+	}
+	port = ":" + port
+	l, err := net.Listen(network, port)
 	if err != nil {
 		slog.Error("failed to listen on network",
-			"network", *network, "address", *address, "error message", err.Error())
+			"network", network, "address", port, "error message", err.Error())
 		os.Exit(1)
 	}
 
@@ -41,7 +49,7 @@ func main() {
 	// handling below.
 	errCh := make(chan error, 1)
 	go func() {
-		slog.Info("Server Started", "network", *network, "address", *address)
+		slog.Info("Server Started", "network", network, "address", port)
 		errCh <- svr.Serve(l)
 	}()
 
