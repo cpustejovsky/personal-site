@@ -1,13 +1,16 @@
 -   [Technology
     `<a name="Technology">`{=html}`</a>`{=html}](#technology){#toc-technology}
-    -   [General
-        `<a name="General">`{=html}`</a>`{=html}](#general){#toc-general}
+    -   [Communication](#communication){#toc-communication}
     -   [Git](#git){#toc-git}
+    -   [Architecture/Design
+        `<a name="Architecture">`{=html}`</a>`{=html}](#architecturedesign){#toc-architecturedesign}
     -   [Golang
         `<a name="Golang">`{=html}`</a>`{=html}](#golang){#toc-golang}
     -   [Testing
         `<a name="Testing">`{=html}`</a>`{=html}](#testing){#toc-testing}
     -   [SQL `<a name="SQL">`{=html}`</a>`{=html}](#sql){#toc-sql}
+    -   [MongoDB
+        `<a name="MongoDB">`{=html}`</a>`{=html}](#mongodb){#toc-mongodb}
 -   [Theology/Spirituality
     `<a name="Theology">`{=html}`</a>`{=html}](#theologyspirituality){#toc-theologyspirituality}
 -   [Race Relations
@@ -17,8 +20,18 @@
 
 ## Technology `<a name="Technology">`{=html}`</a>`{=html}
 
-### General `<a name="General">`{=html}`</a>`{=html}
+### Communication
 
+Communication is just as important in technical roles as it is in any
+other. Here are some resources I use to communicate clearly and
+directly.
+
+-   [Politics and the English
+    Language](https://www.orwellfoundation.com/the-orwell-foundation/orwell/essays-and-other-works/politics-and-the-english-language/)
+-   [Hemmingway Editor](https://hemingwayapp.com/)
+-   [Elements of Style by Strunk and
+    White](https://en.wikipedia.org/wiki/The_Elements_of_Style) \###
+    General `<a name="General">`{=html}`</a>`{=html}
 -   [Regex 101](https://regex101.com/)
 -   [The Art of
     Googling](https://dev.to/lauragift21/the-art-of-googling-4c04)
@@ -32,8 +45,9 @@
     branches](https://stackoverflow.com/questions/10312521/how-do-i-fetch-all-git-branches)
 -   [global
     gitignore](https://stackoverflow.com/questions/7335420/global-git-ignore)
-    \### Architecture/Design
-    `<a name="Architecture">`{=html}`</a>`{=html}
+
+### Architecture/Design `<a name="Architecture">`{=html}`</a>`{=html}
+
 -   <https://netflixtechblog.com/fault-tolerance-in-a-high-volume-distributed-system-91ab4faae74a>
 -   [SOLID Go
     Design](https://dave.cheney.net/2016/08/20/solid-go-design)
@@ -73,20 +87,17 @@
 ### SQL `<a name="SQL">`{=html}`</a>`{=html}
 
 -   [Four Different Kinds of Join](https://www.dofactory.com/sql/join)
-
 -   [Just Use Postgres for
     Everything](https://www.amazingcto.com/postgres-for-everything/)
-
 -   [Top psql commands and flags you need to
     know](https://hasura.io/blog/top-psql-commands-and-flags-you-need-to-know-postgresql)
-    \### MongoDB `<a name="MongoDB">`{=html}`</a>`{=html}
+
+### MongoDB `<a name="MongoDB">`{=html}`</a>`{=html}
 
 -   [MongoDB Schema Design Best
     Practices](https://www.mongodb.com/developer/article/mongodb-schema-design-best-practices/)
-
 -   [MongoDB Schema Design
     Anti-Patterns](https://www.mongodb.com/developer/article/schema-design-anti-pattern-summary/)
-
 -   [MongoDB Building
     Patterns](https://www.mongodb.com/blog/post/building-with-patterns-a-summary)
 
@@ -112,7 +123,7 @@
 
 -   **Quote from St. John Climicus' Ladder of Divine Ascent, Step 5.30**
 
-    > "Do not be surprised that you fall every day; do not give up, but
+    > Do not be surprised that you fall every day; do not give up, but
     > stand your ground courageously. And assuredly the angel who guards
     > you will honour your patience. While a wound is still fresh and
     > warm it is easy to heal, but old, neglected and festering ones are
@@ -122,7 +133,7 @@
 
 -   **Saying of Abba Mius**
 
-    > "A soldier asked Abba Mius if God accepted repentance. After the
+    > A soldier asked Abba Mius if God accepted repentance. After the
     > old man had taught him many things he said, 'Tell me, my dear, if
     > your cloak is torn, do you throw it away?' He replied, 'No, I mend
     > it and use it again.' The old man said to him, 'If you are so
