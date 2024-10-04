@@ -96,7 +96,7 @@ directly.
 
 ### SQL `<a name="SQL">`{=html}`</a>`{=html}
 
-![SQL Joins](./images/sql_joins.jpg)
+![SQL Joins](https://i.imgur.com/DrwOq6F.jpeg)
 
 -   [Just Use Postgres for
     Everything](https://www.amazingcto.com/postgres-for-everything/)
