@@ -43,7 +43,8 @@ Communication is just as important in technical roles as it is in any other. Her
 * [path vs query parameters](https://stackoverflow.com/a/31261026/7680271)
 
 ### SQL <a name="SQL"></a>
-![SQL Joins](images/sql_joins.jpg)
+![SQL Joins](https://i.imgur.com/DrwOq6F.jpeg)
+
 * [Just Use Postgres for Everything](https://www.amazingcto.com/postgres-for-everything/)
 * [Top psql commands and flags you need to know](https://hasura.io/blog/top-psql-commands-and-flags-you-need-to-know-postgresql)
 
