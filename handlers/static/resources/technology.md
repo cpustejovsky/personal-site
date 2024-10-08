@@ -18,10 +18,12 @@ Communication is just as important in technical roles as it is in any other. Her
 * [global gitignore](https://stackoverflow.com/questions/7335420/global-git-ignore)
 
 ### Architecture/Design <a name="Architecture"></a>
-* [https://netflixtechblog.com/fault-tolerance-in-a-high-volume-distributed-system-91ab4faae74a](https://netflixtechblog.com/fault-tolerance-in-a-high-volume-distributed-system-91ab4faae74a)
-* [SOLID Go Design](https://dave.cheney.net/2016/08/20/solid-go-design)
+* [Fault Tolerance in a High Volume, Distributed System](https://netflixtechblog.com/fault-tolerance-in-a-high-volume-distributed-system-91ab4faae74a)
+* [Principle of least astonishment](https://en.wikipedia.org/wiki/Principle_of_least_astonishment)
 
 ### Golang <a name="Golang"></a>
+* [SOLID Go Design](https://dave.cheney.net/2016/08/20/solid-go-design)
+* [Go Styleguide](https://google.github.io/styleguide/go/)
 * [Dependency Injection in a nutshell](https://appliedgo.net/di/)
 * [Ultimate Go Training GitHub repo](https://github.com/ardanlabs/gotraining/blob/master/topics/courses/go/README.md)
 * [Defer, Panic, and Recover](https://go.dev/blog/defer-panic-and-recover)
