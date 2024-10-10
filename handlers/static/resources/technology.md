@@ -22,6 +22,7 @@ Communication is just as important in technical roles as it is in any other. Her
 * [Principle of least astonishment](https://en.wikipedia.org/wiki/Principle_of_least_astonishment)
 
 ### Golang <a name="Golang"></a>
+* [Go's `goto` keyword](https://stackoverflow.com/a/11065563)
 * [SOLID Go Design](https://dave.cheney.net/2016/08/20/solid-go-design)
 * [Go Styleguide](https://google.github.io/styleguide/go/)
 * [Dependency Injection in a nutshell](https://appliedgo.net/di/)
