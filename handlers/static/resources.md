@@ -60,6 +60,8 @@ directly.
 
 ### Golang `<a name="Golang">`{=html}`</a>`{=html}
 
+-   [Vetting
+    `go vet`](https://groups.google.com/g/golang-nuts/c/YyWQQN8iHCU/m/mmVNFqanBgAJ)
 -   [Go's `goto` keyword](https://stackoverflow.com/a/11065563)
 -   [SOLID Go
     Design](https://dave.cheney.net/2016/08/20/solid-go-design)
