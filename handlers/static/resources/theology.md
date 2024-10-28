@@ -1,5 +1,8 @@
 
 ## Theology/Spirituality <a name="Theology"></a>
+* **Quote from St. Nektary of Optina**
+
+   >One may have a good worldly relationship with non-believers, but one cannot have a relationship in prayer and one must not carry on arguments about religion so that the name of God not be offended during an argument.
 * [Orthodoxy and Nationalism: The Good, the Bad and the Ugly](https://www.ancientfaith.com/podcasts/features/orthodoxy_and_nationalism_the_good_the_bad_and_the_ugly)
 * **Abba Moses Refusing to Judge His Brother**
   
