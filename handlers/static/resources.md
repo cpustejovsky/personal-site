@@ -16,6 +16,8 @@
         `<a name="MongoDB">`{=html}`</a>`{=html}](#mongodb){#toc-mongodb}
 -   [Theology/Spirituality
     `<a name="Theology">`{=html}`</a>`{=html}](#theologyspirituality){#toc-theologyspirituality}
+    -   [55 Maxims of the Christian Life from Fr. Thomas
+        Hopko](#maxims-of-the-christian-life-from-fr.-thomas-hopko){#toc-maxims-of-the-christian-life-from-fr.-thomas-hopko}
 -   [Race Relations
     `<a name="RaceRelations">`{=html}`</a>`{=html}](#race-relations){#toc-race-relations}
 -   [Mental Health
@@ -124,7 +126,7 @@ directly.
 -   **Quote from St. Nektary of Optina**
 
     > One may have a good worldly relationship with non-believers, but
-    > one cannot have a relationship in prayer and one myst not carry on
+    > one cannot have a relationship in prayer and one must not carry on
     > arguments about religion so that the name of God not be offended
     > during an argument.
 
@@ -168,6 +170,67 @@ directly.
 -   [Meeting Michelle: Pastoral and Theological Reflections on a
     Transgender Inmate - Public
     Orthodoxy](https://publicorthodoxy.org/2019/09/19/meeting-michelle-pastoral-and-theological-reflections-on-a-transgender-inmate/)
+
+### 55 Maxims of the Christian Life from Fr. Thomas Hopko
+
+1.  Be always with Christ and trust God in everything.
+2.  Pray as you can, not as you think you must.
+3.  Have a keepable rule of prayer done by discipline.
+4.  Say the Lord's Prayer several times each day.
+5.  Repeat a short prayer when your mind is not occupied.
+6.  Make some prostrations when you pray.
+7.  Eat good foods in moderation and fast on fasting days.
+8.  Practice silence, inner and outer.
+9.  Sit in silence 20 to 30 minutes each day.
+10. Do acts of mercy in secret.
+11. Go to liturgical services regularly.
+12. Go to confession and holy communion regularly.
+13. Do not engage intrusive thoughts and feelings.
+14. Reveal all your thoughts and feelings to a trusted person regularly.
+15. Read the scriptures regularly.
+16. Read good books, a little at a time.
+17. Cultivate communion with the saints.
+18. Be an ordinary person, one of the human race.
+19. Be polite with everyone, first of all family members.
+20. Maintain cleanliness and order in your home.
+21. Have a healthy, wholesome hobby.
+22. Exercise regularly.
+23. Live a day, even a part of a day, at a time.
+24. Be totally honest, first of all with yourself.
+25. Be faithful in little things.
+26. Do your work, then forget it.
+27. Do the most difficult and painful things first.
+28. Face reality.
+29. Be grateful.
+30. Be cheerful.
+31. Be simple, hidden, quiet and small.
+32. Never bring attention to yourself.
+33. Listen when people talk to you.
+34. Be awake and attentive, fully present where you are.
+35. Think and talk about things no more than necessary.
+36. Speak simply, clearly, firmly, directly.
+37. Flee imagination, fantasy, analysis, figuring things out.
+38. Flee carnal, sexual things at their first appearance.
+39. Don't complain, grumble, murmur or whine.
+40. Don't seek or expect pity or praise.
+41. Don't compare yourself with anyone.
+42. Don't judge anyone for anything.
+43. Don't try to convince anyone of anything.
+44. Don't defend or justify yourself.
+45. Be defined and bound by God, not people.
+46. Accept criticism gracefully and test it carefully.
+47. Give advice only when asked or when it is your duty.
+48. Do nothing for people that they can and should do for themselves.
+49. Have a daily schedule of activities, avoiding whim and caprice.
+50. Be merciful with yourself and others.
+51. Have no expectations except to be fiercely tempted to your last
+    breath.
+52. Focus exclusively on God and light, and never on darkness,
+    temptation and sin.
+53. Endure the trial of yourself and your faults serenely, under God's
+    mercy.
+54. When you fall, get up immediately and start over.
+55. Get help when you need it, without fear or shame.
 
 ## Race Relations `<a name="RaceRelations">`{=html}`</a>`{=html}
 
