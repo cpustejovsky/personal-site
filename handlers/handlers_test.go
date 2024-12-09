@@ -1,12 +1,19 @@
 package handlers_test
 
 import (
-	"github.com/cpustejovsky/personal-site/handlers"
+	"os"
 	"testing"
+
+	"github.com/cpustejovsky/personal-site/handlers"
 )
 
 func TestGetResourcesPage(t *testing.T) {
-	_, err := handlers.GetResourcesPage()
+	wd, err := os.Getwd()
+	if err != nil {
+		t.Fatal(err)
+	}
+	wd += "/static/resources.html"
+	_, err = handlers.GetResourcesPage(wd)
 	if err != nil {
 		t.Fatal(err)
 	}
