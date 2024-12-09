@@ -1,0 +1,55 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <title>Charles Pustejovsky | Go Developer</title>
+        <link rel="icon" type="image/x-icon" href="/static/images/favicon.png">
+        <meta charSet="utf-8"/>
+        <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+        <link rel=stylesheet href="/static/styles.min.css"/>
+        <meta name="description"
+              content="Golang developer passionate about TDD, SQL, gRPC/protobuf, Distributed Systems, Kafka, etc."
+              lang="en"/>
+        <link href="/static/jetbrainsmono" rel="stylesheet">
+        <script src="/static/htmx.min.js"></script>
+    </head>
+    <body>
+    <nav class="navbar is-max-desktop has-shadow" role="navigation" aria-label="main navigation">
+        <div class="navbar-menu is-active">
+            <a class="navbar-item" href="/"><h1>Cpustejovsky 👍</h1></a>
+            <div style="display: flex">
+                <a class="navbar-item" href="/about">About</a>
+                <a class="navbar-item" href="/education">Continuing Education</a>
+                <a class="navbar-item" href="/resources">Resources</a>
+            </div>
+        </div>
+    </nav>
+    <main class="container is-max-desktop" style="padding: 1rem">
+
+<h1>hello world</h1>
+
+<p>This is a description</p>
+
+Tags: <ul><li>go</li><li>tdd</li></ul>
+<h1 id="first-recipe">First recipe!</h1>
+
+<p>Welcome to my <strong>amazing blog</strong>. I am going to write about my family recipes, and make sure I write a long, irrelevant and boring story about my family before you get to the actual instructions.</p>
+
+
+    </main>
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>Cpustejovsky 2024 | <a target="_blank" rel="noreferrer noopener"
+                                                 href="https://twitter.com/CCPustejovsky">Twitter</a> | <a
+                        target="_blank" rel="noreferrer noopener"
+                        href="https://github.com/cpustejovsky">GitHub</a> | <a target="_blank" rel="noreferrer noopener"
+                                                                               href="https://drive.google.com/file/d/1Ye5yk6iU15yoYlR94NI5fVSb7WSt8jI2/view">Resume</a>
+                | <a target="_blank" rel="noreferrer noopener"
+                     href="mailto:charles@cpustejovsky.com">Email</a>
+            </p>
+        </div>
+    </footer>
+    </body>
+    </html>
+

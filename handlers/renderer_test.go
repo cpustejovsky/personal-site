@@ -20,7 +20,7 @@ Welcome to my **amazing blog**. I am going to write about my family recipes, and
 		}
 	)
 
-	postRenderer, err := handlers.NewBlogPostRenderer()
+	postRenderer, err := handlers.NewRenderer()
 
 	if err != nil {
 		t.Fatal(err)
@@ -29,7 +29,7 @@ Welcome to my **amazing blog**. I am going to write about my family recipes, and
 	t.Run("it converts a single post into HTML", func(t *testing.T) {
 		buf := bytes.Buffer{}
 
-		if err := postRenderer.Render(&buf, aPost); err != nil {
+		if err := postRenderer.RenderBlogPost(&buf, aPost); err != nil {
 			t.Fatal(err)
 		}
 
@@ -40,7 +40,7 @@ Welcome to my **amazing blog**. I am going to write about my family recipes, and
 		buf := bytes.Buffer{}
 		posts := []handlers.Post{{Title: "Hello World"}, {Title: "Hello World 2"}}
 
-		if err := postRenderer.RenderIndex(&buf, posts); err != nil {
+		if err := postRenderer.RenderBlogIndex(&buf, posts); err != nil {
 			t.Fatal(err)
 		}
 
@@ -58,7 +58,7 @@ func BenchmarkRender(b *testing.B) {
 		}
 	)
 
-	postRenderer, err := handlers.NewBlogPostRenderer()
+	postRenderer, err := handlers.NewRenderer()
 
 	if err != nil {
 		b.Fatal(err)
@@ -66,6 +66,6 @@ func BenchmarkRender(b *testing.B) {
 
 	b.ResetTimer()
 	for i := 0; i < b.N; i++ {
-		postRenderer.Render(io.Discard, aPost)
+		postRenderer.RenderBlogPost(io.Discard, aPost)
 	}
 }
