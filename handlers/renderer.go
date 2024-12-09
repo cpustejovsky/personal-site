@@ -13,7 +13,7 @@ import (
 
 var (
 	//go:embed "templates/*"
-	postTemplates embed.FS
+	templates embed.FS
 )
 
 var CurrentYear template.FuncMap = template.FuncMap{
@@ -59,6 +59,18 @@ func (r *Renderer) RenderEducation(w io.Writer) error {
 
 func (r *Renderer) RenderNotFound(w io.Writer) error {
 	return r.RenderHTML(w, "notfound.gohtml", nil)
+}
+
+func (r *Renderer) RenderLTC(w io.Writer, input any) error {
+	return r.RenderHTML(w, "ltc.gohtml", input)
+}
+
+// Render renders post into HTML
+func (r *Renderer) RenderResourcePage(w io.Writer, body string) error {
+	p := Post{
+		Body: body,
+	}
+	return r.templ.ExecuteTemplate(w, "resources.gohtml", newPostVM(p, r))
 }
 
 // RenderIndex creates an HTML index page given a collection of posts
