@@ -8,5 +8,3 @@ echo "" >> "$STATIC"/resources.md
 cat "$STATIC"/resources/race_relations.md >> "$STATIC"/resources.md
 echo "" >> "$STATIC"/resources.md
 cat "$STATIC"/resources/mental_health.md >> "$STATIC"/resources.md
-pandoc -s --toc "$STATIC"/resources.md -o "$STATIC"/resources.md
-pandoc -f markdown -t html "$STATIC"/resources.md -o "$STATIC"/resources.html
