@@ -190,7 +190,14 @@ func (h *Handler) education(w http.ResponseWriter, _ *http.Request) {
 }
 
 func (h *Handler) resources(w http.ResponseWriter, _ *http.Request) {
-	body, err := GetResourcesPage()
+	wd, err := os.Getwd()
+	if err != nil {
+		log.Println("error getting working directory", err)
+		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
+		return
+	}
+	path := wd + "/handlers/static/resources.html"
+	body, err := GetResourcesPage(path)
 	if err != nil {
 		log.Println("error getting resource page", err)
 		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
@@ -204,13 +211,8 @@ func (h *Handler) resources(w http.ResponseWriter, _ *http.Request) {
 	}
 }
 
-func GetResourcesPage() (string, error) {
-	wd, err := os.Getwd()
-	if err != nil {
-		return "", err
-	}
-	log.Println("working directory:\t", wd)
-	dat, err := os.ReadFile(wd + "/handlers/static/resources.html")
+func GetResourcesPage(path string) (string, error) {
+	dat, err := os.ReadFile(path)
 	if err != nil {
 		return "", err
 	}
