@@ -3,7 +3,6 @@ package handlers
 import (
 	"embed"
 	"fmt"
-	"html/template"
 	"io/fs"
 	"log"
 	"net/http"
@@ -14,8 +13,6 @@ import (
 )
 
 var (
-	//go:embed "templates/*"
-	templates embed.FS
 	//go:embed "static/*"
 	static embed.FS
 )
@@ -52,46 +49,40 @@ func New() (*Handler, error) {
 	return handler, nil
 }
 
+func InternalServerError(w http.ResponseWriter, err error) {
+	if err != nil {
+		log.Println(err)
+		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
+		return
+	}
+
+}
+
 func (h *Handler) index(w http.ResponseWriter, r *http.Request) {
 	if r.URL.Path != "/" {
 		h.notfound(w, r)
 		return
 	}
 	err := h.Renderer.RenderIndex(w)
-	if err != nil {
-		log.Println(err)
-		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
-		return
-	}
+	InternalServerError(w, err)
 }
 
 func (h *Handler) about(w http.ResponseWriter, _ *http.Request) {
 	err := h.Renderer.RenderAbout(w)
-	if err != nil {
-		log.Println(err)
-		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
-		return
-	}
+
+	InternalServerError(w, err)
 }
 
 func (h *Handler) ltc(w http.ResponseWriter, _ *http.Request) {
-	err := h.Renderer.RenderHTML(w, "ltc.gohtml", nil)
-	if err != nil {
-		log.Println(err)
-		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
-		return
-	}
+	err := h.Renderer.RenderLTC(w, nil)
+	InternalServerError(w, err)
 }
 
 // TODO: move this into it's own function inside the ltc dir
 func (h *Handler) updateltc(w http.ResponseWriter, r *http.Request) {
 	err := r.ParseForm()
-	if err != nil {
-		log.Println(err)
-		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
-		return
-	}
 	var dateDating, dateMarried time.Time
+	InternalServerError(w, err)
 	yourName := r.PostForm.Get("yourName")
 	otherName := r.PostForm.Get("otherName")
 	yourBirthday, err := time.Parse(time.DateOnly, r.PostForm.Get("yourBirthday"))
@@ -145,7 +136,7 @@ func (h *Handler) updateltc(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
 		return
 	}
-	err = h.Renderer.RenderHTML(w, "ltc.gohtml", out)
+	err = h.Renderer.RenderLTC(w, out)
 	if err != nil {
 		log.Println(err)
 		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
@@ -155,11 +146,7 @@ func (h *Handler) updateltc(w http.ResponseWriter, r *http.Request) {
 
 func (h *Handler) education(w http.ResponseWriter, _ *http.Request) {
 	err := h.Renderer.RenderEducation(w)
-	if err != nil {
-		log.Println(err)
-		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
-		return
-	}
+	InternalServerError(w, err)
 }
 
 func (h *Handler) resources(w http.ResponseWriter, _ *http.Request) {
@@ -169,14 +156,14 @@ func (h *Handler) resources(w http.ResponseWriter, _ *http.Request) {
 		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
 		return
 	}
-	path := wd + "/handlers/static/resources.html"
+	path := wd + "/handlers/static/resources.md"
 	body, err := GetResourcesPage(path)
 	if err != nil {
 		log.Println("error getting resource page", err)
 		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
 		return
 	}
-	err = h.Renderer.RenderHTML(w, "resources.gohtml", template.HTML(body))
+	err = h.Renderer.RenderResourcePage(w, body)
 	if err != nil {
 		log.Println("error rendering resource page", err)
 		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
@@ -194,10 +181,7 @@ func GetResourcesPage(path string) (string, error) {
 
 func (h *Handler) notfound(w http.ResponseWriter, _ *http.Request) {
 	err := h.Renderer.RenderNotFound(w)
-	if err != nil {
-		log.Println(err)
-		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
-	}
+	InternalServerError(w, err)
 }
 
 func newStaticHandler() (http.Handler, error) {
