@@ -4,14 +4,12 @@ import (
 	"embed"
 	"fmt"
 	"html/template"
-	"io"
 	"io/fs"
 	"log"
 	"net/http"
 	"os"
 	"time"
 
-	"github.com/cpustejovsky/personal-site/domain/education"
 	"github.com/cpustejovsky/personal-site/domain/lifetogether"
 )
 
@@ -21,10 +19,6 @@ var (
 	//go:embed "static/*"
 	static embed.FS
 )
-
-type Renderer struct {
-	templ *template.Template
-}
 
 type Handler struct {
 	http.Handler
@@ -58,33 +52,12 @@ func New() (*Handler, error) {
 	return handler, nil
 }
 
-func NewRenderer() (*Renderer, error) {
-	fm := template.FuncMap{
-		"currentYear": func() int {
-			return time.Now().UTC().Year()
-		},
-	}
-
-	templ, err := template.New("base").Funcs(fm).ParseFS(templates, "templates/*.gohtml")
-	if err != nil {
-		return nil, err
-	}
-
-	return &Renderer{
-		templ: templ,
-	}, nil
-}
-
-func (r *Renderer) RenderHTML(w io.Writer, name string, data any) error {
-	return r.templ.ExecuteTemplate(w, name, data)
-}
-
 func (h *Handler) index(w http.ResponseWriter, r *http.Request) {
 	if r.URL.Path != "/" {
 		h.notfound(w, r)
 		return
 	}
-	err := h.Renderer.RenderHTML(w, "index.gohtml", nil)
+	err := h.Renderer.RenderIndex(w)
 	if err != nil {
 		log.Println(err)
 		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
@@ -93,7 +66,7 @@ func (h *Handler) index(w http.ResponseWriter, r *http.Request) {
 }
 
 func (h *Handler) about(w http.ResponseWriter, _ *http.Request) {
-	err := h.Renderer.RenderHTML(w, "about.gohtml", nil)
+	err := h.Renderer.RenderAbout(w)
 	if err != nil {
 		log.Println(err)
 		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
@@ -110,6 +83,7 @@ func (h *Handler) ltc(w http.ResponseWriter, _ *http.Request) {
 	}
 }
 
+// TODO: move this into it's own function inside the ltc dir
 func (h *Handler) updateltc(w http.ResponseWriter, r *http.Request) {
 	err := r.ParseForm()
 	if err != nil {
@@ -180,8 +154,7 @@ func (h *Handler) updateltc(w http.ResponseWriter, r *http.Request) {
 }
 
 func (h *Handler) education(w http.ResponseWriter, _ *http.Request) {
-	categories := education.GetContinuingEducationCategories(education.ContinuingEducationList)
-	err := h.Renderer.RenderHTML(w, "educationlist.gohtml", categories)
+	err := h.Renderer.RenderEducation(w)
 	if err != nil {
 		log.Println(err)
 		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
@@ -190,7 +163,14 @@ func (h *Handler) education(w http.ResponseWriter, _ *http.Request) {
 }
 
 func (h *Handler) resources(w http.ResponseWriter, _ *http.Request) {
-	body, err := GetResourcesPage()
+	wd, err := os.Getwd()
+	if err != nil {
+		log.Println("error getting working directory", err)
+		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
+		return
+	}
+	path := wd + "/handlers/static/resources.html"
+	body, err := GetResourcesPage(path)
 	if err != nil {
 		log.Println("error getting resource page", err)
 		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
@@ -204,13 +184,8 @@ func (h *Handler) resources(w http.ResponseWriter, _ *http.Request) {
 	}
 }
 
-func GetResourcesPage() (string, error) {
-	wd, err := os.Getwd()
-	if err != nil {
-		return "", err
-	}
-	log.Println("working directory:\t", wd)
-	dat, err := os.ReadFile(wd + "/handlers/static/resources.html")
+func GetResourcesPage(path string) (string, error) {
+	dat, err := os.ReadFile(path)
 	if err != nil {
 		return "", err
 	}
@@ -218,7 +193,7 @@ func GetResourcesPage() (string, error) {
 }
 
 func (h *Handler) notfound(w http.ResponseWriter, _ *http.Request) {
-	err := h.Renderer.RenderHTML(w, "notfound.gohtml", nil)
+	err := h.Renderer.RenderNotFound(w)
 	if err != nil {
 		log.Println(err)
 		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
