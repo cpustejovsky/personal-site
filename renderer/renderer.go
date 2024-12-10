@@ -1,4 +1,4 @@
-package handlers
+package renderer
 
 import (
 	"embed"
@@ -11,10 +11,8 @@ import (
 	"github.com/gomarkdown/markdown/parser"
 )
 
-var (
-	//go:embed "templates/*"
-	templates embed.FS
-)
+//go:embed "templates/*"
+var templates embed.FS
 
 var CurrentYear template.FuncMap = template.FuncMap{
 	"currentYear": func() int {
@@ -23,20 +21,20 @@ var CurrentYear template.FuncMap = template.FuncMap{
 }
 
 type Renderer struct {
-	templ    *template.Template
-	mdParser *parser.Parser
+	templ *template.Template
 }
 
-func NewRenderer() (*Renderer, error) {
+func newParser() *parser.Parser {
+	extensions := parser.CommonExtensions | parser.AutoHeadingIDs
+	return parser.NewWithExtensions(extensions)
+}
+func New() (*Renderer, error) {
 	templ, err := template.New("base").Funcs(CurrentYear).ParseFS(templates, "templates/*.gohtml")
 	if err != nil {
 		return nil, err
 	}
 
-	extensions := parser.CommonExtensions | parser.AutoHeadingIDs
-	parser := parser.NewWithExtensions(extensions)
-
-	return &Renderer{templ: templ, mdParser: parser}, nil
+	return &Renderer{templ: templ}, nil
 }
 
 func (r *Renderer) RenderHTML(w io.Writer, name string, data any) error {
@@ -90,6 +88,6 @@ type postViewModel struct {
 
 func newPostVM(p Post, r *Renderer) postViewModel {
 	vm := postViewModel{Post: p}
-	vm.HTMLBody = template.HTML(markdown.ToHTML([]byte(p.Body), r.mdParser, nil))
+	vm.HTMLBody = template.HTML(markdown.ToHTML([]byte(p.Body), newParser(), nil))
 	return vm
 }
