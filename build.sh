@@ -1,4 +1,4 @@
-STATIC="./handlers/static/"
+STATIC="./handlers/static"
 # sass --no-source-map "$STATIC"/styles.scss:handlers/static/styles.min.css --style compressed
 touch "$STATIC"/resource.md
 cat "$STATIC"/resources/technology.md > "$STATIC"/resources.md

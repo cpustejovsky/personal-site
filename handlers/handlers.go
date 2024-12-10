@@ -10,20 +10,26 @@ import (
 	"time"
 
 	"github.com/cpustejovsky/personal-site/domain/lifetogether"
-)
-
-var (
-	//go:embed "static/*"
-	static embed.FS
+	"github.com/cpustejovsky/personal-site/renderer"
 )
 
 type Handler struct {
 	http.Handler
-	Renderer Renderer
+	Renderer renderer.Renderer
 }
 
+//go:embed "static/*"
+var static embed.FS
+
+func newStaticHandler() (http.Handler, error) {
+	lol, err := fs.Sub(static, "static")
+	if err != nil {
+		return nil, err
+	}
+	return http.FileServer(http.FS(lol)), nil
+}
 func New() (*Handler, error) {
-	r, err := NewRenderer()
+	r, err := renderer.New()
 	if err != nil {
 		return nil, err
 	}
@@ -182,12 +188,4 @@ func GetResourcesPage(path string) (string, error) {
 func (h *Handler) notfound(w http.ResponseWriter, _ *http.Request) {
 	err := h.Renderer.RenderNotFound(w)
 	InternalServerError(w, err)
-}
-
-func newStaticHandler() (http.Handler, error) {
-	lol, err := fs.Sub(static, "static")
-	if err != nil {
-		return nil, err
-	}
-	return http.FileServer(http.FS(lol)), nil
 }
