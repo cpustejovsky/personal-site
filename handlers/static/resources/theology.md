@@ -1,5 +1,4 @@
-
-## Theology/Spirituality <a name="Theology"></a>
+# Theology/Spirituality
 * **Quote from St. Nektary of Optina**
 
    >One may have a good worldly relationship with non-believers, but one cannot have a relationship in prayer and one must not carry on arguments about religion so that the name of God not be offended during an argument.
@@ -15,7 +14,7 @@
    >A soldier asked Abba Mius if God accepted repentance. After the old man had taught him many things he said, 'Tell me, my dear, if your cloak is torn, do you throw it away?' He replied, 'No, I mend it and use it again.' The old man said to him, 'If you are so careful about your cloak, will not God be equally careful about his creature?'
 * [Meeting Michelle: Pastoral and Theological Reflections on a Transgender Inmate - Public Orthodoxy](https://publicorthodoxy.org/2019/09/19/meeting-michelle-pastoral-and-theological-reflections-on-a-transgender-inmate/)
 
-### 55 Maxims of the Christian Life from Fr. Thomas Hopko
+## 55 Maxims of the Christian Life from Fr. Thomas Hopko
 1. Be always with Christ and trust God in everything.
 2. Pray as you can, not as you think you must.
 3. Have a keepable rule of prayer done by discipline.
