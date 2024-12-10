@@ -1,27 +1,41 @@
-## Technology <a name="Technology"></a>
+  - [Technology](#technology)
+    - [Communication](#communication)
+    - [General](#general)
+    - [Git](#git)
+    - [Architecture/Design](#architecture/design)
+    - [Golang](#golang)
+    - [Testing](#testing)
+    - [REST APIs](#rest-apis)
+    - [SQL](#sql)
+    - [MongoDB](#mongodb)
+  - [Theology/Spirituality](#theology/spirituality)
+    - [55 Maxims of the Christian Life from Fr. Thomas Hopko](#55-maxims-of-the-christian-life-from-fr.-thomas-hopko)
+  - [Race Relations](#race-relations)
+  - [Mental Health](#mental-health)
+# Technology
 
-### Communication
+## Communication
 Communication is just as important in technical roles as it is in any other. Here are some resources I use to communicate clearly and directly.
 
 - [Politics and the English Language](https://www.orwellfoundation.com/the-orwell-foundation/orwell/essays-and-other-works/politics-and-the-english-language/)
 - [Hemmingway Editor](https://hemingwayapp.com/)
 - [Elements of Style by Strunk and White](https://en.wikipedia.org/wiki/The_Elements_of_Style)
 
-### General <a name="General"></a>
+## General
 * [Regex 101](https://regex101.com/)
 * [The Art of Googling](https://dev.to/lauragift21/the-art-of-googling-4c04)
 * [explainshell.com](https://explainshell.com/)
 * [Why Floating Point Math is weird for computers](https://0.30000000000000004.com/)
 
-### Git
+## Git
 * [fetch all remote git branches](https://stackoverflow.com/questions/10312521/how-do-i-fetch-all-git-branches)
 * [global gitignore](https://stackoverflow.com/questions/7335420/global-git-ignore)
 
-### Architecture/Design <a name="Architecture"></a>
+## Architecture/Design
 * [Fault Tolerance in a High Volume, Distributed System](https://netflixtechblog.com/fault-tolerance-in-a-high-volume-distributed-system-91ab4faae74a)
 * [Principle of least astonishment](https://en.wikipedia.org/wiki/Principle_of_least_astonishment)
 
-### Golang <a name="Golang"></a>
+## Golang
 * [Vetting `go vet`](https://groups.google.com/g/golang-nuts/c/YyWQQN8iHCU/m/mmVNFqanBgAJ)
 * [Go's `goto` keyword](https://stackoverflow.com/a/11065563)
 * [SOLID Go Design](https://dave.cheney.net/2016/08/20/solid-go-design)
@@ -35,7 +49,7 @@ Communication is just as important in technical roles as it is in any other. Her
 * [Organizing Database Access in Go](https://www.alexedwards.net/blog/organising-database-access)
 * [Should I use sync.Mutex or a channel?](https://github.com/golang/go/wiki/MutexOrChannel)
 
-### Testing <a name="Testing"></a>
+## Testing
 * Why mocking is likely becoming messy, complicated, and bloated (from [Learn Go with Testing](https://quii.gitbook.io/learn-go-with-tests))
 ![Reason for why mocking might be sucking; Text can be found in the mocking chapter of Learning Go with Testing](https://dev-to-uploads.s3.amazonaws.com/i/ed6in4a0imo63fmc0nmh.png)
 * [Mocks aren't Stubs by Martin Fowler](https://martinfowler.com/articles/mocksArentStubs.html)
@@ -43,22 +57,21 @@ Communication is just as important in technical roles as it is in any other. Her
 ![five different types of test doubles according to Gerard Meszaros](https://dev-to-uploads.s3.amazonaws.com/i/o837ynetmw2rhlf3armc.png)
 * [The Practical Test Pyramid](https://martinfowler.com/articles/practical-test-pyramid.html)
 
-### REST APIs
+## REST APIs
 * [path vs query parameters](https://stackoverflow.com/a/31261026/7680271)
 
-### SQL <a name="SQL"></a>
+## SQL
 ![SQL Joins](https://i.imgur.com/DrwOq6F.jpeg)
 
 * [Just Use Postgres for Everything](https://www.amazingcto.com/postgres-for-everything/)
 * [Top psql commands and flags you need to know](https://hasura.io/blog/top-psql-commands-and-flags-you-need-to-know-postgresql)
 
-### MongoDB <a name="MongoDB"></a>
+## MongoDB
 * [MongoDB Schema Design Best Practices](https://www.mongodb.com/developer/article/mongodb-schema-design-best-practices/)
 * [MongoDB Schema Design Anti-Patterns](https://www.mongodb.com/developer/article/schema-design-anti-pattern-summary/)
 * [MongoDB Building Patterns](https://www.mongodb.com/blog/post/building-with-patterns-a-summary)
 
-
-## Theology/Spirituality <a name="Theology"></a>
+# Theology/Spirituality
 * **Quote from St. Nektary of Optina**
 
    >One may have a good worldly relationship with non-believers, but one cannot have a relationship in prayer and one must not carry on arguments about religion so that the name of God not be offended during an argument.
@@ -74,7 +87,7 @@ Communication is just as important in technical roles as it is in any other. Her
    >A soldier asked Abba Mius if God accepted repentance. After the old man had taught him many things he said, 'Tell me, my dear, if your cloak is torn, do you throw it away?' He replied, 'No, I mend it and use it again.' The old man said to him, 'If you are so careful about your cloak, will not God be equally careful about his creature?'
 * [Meeting Michelle: Pastoral and Theological Reflections on a Transgender Inmate - Public Orthodoxy](https://publicorthodoxy.org/2019/09/19/meeting-michelle-pastoral-and-theological-reflections-on-a-transgender-inmate/)
 
-### 55 Maxims of the Christian Life from Fr. Thomas Hopko
+## 55 Maxims of the Christian Life from Fr. Thomas Hopko
 1. Be always with Christ and trust God in everything.
 2. Pray as you can, not as you think you must.
 3. Have a keepable rule of prayer done by discipline.
@@ -131,7 +144,7 @@ Communication is just as important in technical roles as it is in any other. Her
 54. When you fall, get up immediately and start over.
 55. Get help when you need it, without fear or shame.
 
-## Race Relations <a name="RaceRelations"></a>
+# Race Relations
 * [Greek Orthodox Archdiocese of America Resources for Racial Reconciliation](https://www.goarch.org/society/racial-reconciliation)
 * [Micah Bournes](https://www.micahbournes.com/)
    * [Virtue in the Wasteland Episode 195: Blues Prophet](https://podcasts.apple.com/us/podcast/blues-prophet/id670753324?i=1000375844246)
@@ -146,6 +159,6 @@ Communication is just as important in technical roles as it is in any other. Her
 
    >Difference of race or condition or sex is indeed taken away by the unity of faith, but it remains embedded in our mortal interactions, and in the journey of this life the apostles themselves teach that it is to be respected…. For we observe in the unity of faith that there are no such distinctions. Yet within the orders of this life they persist. So we walk this path in a way that the name and doctrine of God will not be blasphemed. It is not out of fear or anger that we wish to avoid offense to others but also on account of conscience, so that we may do these things not in mere profession, as if for the eyes of men, but with a pure love toward God.
 
-## Mental Health <a name="MentalHealth"></a>
+# Mental Health
 * [This is Water by David Foster Wallace](https://www.youtube.com/watch?v=8CrOL-ydFMI)
 * [Headspace](https://www.headspace.com/)

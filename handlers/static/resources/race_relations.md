@@ -1,5 +1,5 @@
 
-## Race Relations <a name="RaceRelations"></a>
+# Race Relations
 * [Greek Orthodox Archdiocese of America Resources for Racial Reconciliation](https://www.goarch.org/society/racial-reconciliation)
 * [Micah Bournes](https://www.micahbournes.com/)
    * [Virtue in the Wasteland Episode 195: Blues Prophet](https://podcasts.apple.com/us/podcast/blues-prophet/id670753324?i=1000375844246)
