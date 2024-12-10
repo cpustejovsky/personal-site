@@ -48,6 +48,8 @@ func New() (*Handler, error) {
 	router.HandleFunc("/about", handler.about)
 	router.HandleFunc("/education", handler.education)
 	router.HandleFunc("/resources", handler.resources)
+	router.HandleFunc("/blog", handler.blog)
+	router.HandleFunc("/blog/{name}", handler.blogPost)
 	router.HandleFunc("/ltc", handler.ltc)
 	router.HandleFunc("/ltc/calculate", handler.updateltc)
 	router.Handle("/static/", http.StripPrefix("/static/", staticHandler))
@@ -75,7 +77,16 @@ func (h *Handler) index(w http.ResponseWriter, r *http.Request) {
 
 func (h *Handler) about(w http.ResponseWriter, _ *http.Request) {
 	err := h.Renderer.RenderAbout(w)
+	InternalServerError(w, err)
+}
 
+func (h *Handler) blog(w http.ResponseWriter, _ *http.Request) {
+	err := h.Renderer.RenderBlogIndex(w, []renderer.Post{})
+	InternalServerError(w, err)
+}
+
+func (h *Handler) blogPost(w http.ResponseWriter, _ *http.Request) {
+	err := h.Renderer.RenderBlogPost(w, renderer.Post{})
 	InternalServerError(w, err)
 }
 
