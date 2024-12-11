@@ -9,6 +9,7 @@ import (
 	"os"
 	"time"
 
+	"github.com/cpustejovsky/personal-site/domain/blog"
 	"github.com/cpustejovsky/personal-site/domain/lifetogether"
 	"github.com/cpustejovsky/personal-site/renderer"
 )
@@ -81,12 +82,29 @@ func (h *Handler) about(w http.ResponseWriter, _ *http.Request) {
 }
 
 func (h *Handler) blog(w http.ResponseWriter, _ *http.Request) {
-	err := h.Renderer.RenderBlogIndex(w, []renderer.Post{})
+	err := h.Renderer.RenderBlogIndex(w, blog.AllPosts)
 	InternalServerError(w, err)
 }
 
-func (h *Handler) blogPost(w http.ResponseWriter, _ *http.Request) {
-	err := h.Renderer.RenderBlogPost(w, renderer.Post{})
+func (h *Handler) blogPost(w http.ResponseWriter, r *http.Request) {
+	// TODO: blog post not found
+	m := blog.NewPostMap()
+	p, ok := m[r.PathValue("name")]
+	if !ok {
+		err := h.Renderer.RenderNotFound(w)
+		InternalServerError(w, err)
+		return
+	}
+	path, err := os.Getwd()
+	if err != nil {
+		InternalServerError(w, err)
+		return
+	}
+	if err := p.GetBody(path); err != nil {
+		InternalServerError(w, err)
+		return
+	}
+	err = h.Renderer.RenderBlogPost(w, p)
 	InternalServerError(w, err)
 }
 

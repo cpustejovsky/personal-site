@@ -1,3 +1,3 @@
 {{template "header" .}}
-<ol>{{range .}}<li><a href="/post/{{.SanitisedTitle}}">{{.Title}}</a></li>{{end}}</ol>
+<ol>{{range .}}<li><a href="/blog/{{.FileName}}">{{.Title}}</a></li>{{end}}</ol>
 {{template "footer" .}}
