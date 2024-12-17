@@ -1,3 +1,12 @@
 {{template "header" .}}
-<ol>{{range .}}<li><a href="/blog/{{.FileName}}">{{.Title}}</a></li>{{end}}</ol>
+<h2 class="title is-2">Blog</h2>
+<div class="content blog">
+	<a class="post-list" href="/resources"><h3>Resources Page</h3></a>
+	<p class="post-description">Where I keep resouces I keep going back to.</p>
+	<hr/>
+{{range .}}
+	<a class="post-list" href="/blog/{{.FileName}}"><h3>{{.Title}}</h3><p class="post-date">{{.HumanReadableDate}}</p></a>
+	<hr/>
+{{end}}
+</div>
 {{template "footer" .}}

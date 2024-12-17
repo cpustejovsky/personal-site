@@ -1,8 +1,9 @@
 {{template "header" .}}
-<h1>{{.Title}}</h1>
+<h1 class="title is-2">{{.Title}}</h1>
+<div class="content post">
+<p>{{.HumanReadableDate}}</p>
+<hr/>
 
-<p>{{.Description}}</p>
-
-Tags: <ul>{{range .Tags}}<li>{{.}}</li>{{end}}</ul>
 {{.HTMLBody}}
+</div>
 {{template "footer" .}}

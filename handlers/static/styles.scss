@@ -24,6 +24,9 @@ nav {
     flex-wrap: wrap;
 }
 
+.navbar-menu {
+    box-shadow: 0 0 0;
+}
 .navbar-menu.is-active {
     display: flex;
     flex-direction: row;
@@ -41,4 +44,20 @@ footer {
     min-height:2.5rem;
     background-color: #fafafa;
     padding: 1.5rem;
+}
+
+.blog {
+    h3{
+        margin-bottom: 0;
+    }
+    a {
+        color: inherit;
+        text-decoration: inherit;
+    }
+}
+
+.post-date {
+    font-size: .8rem;
+    color: #555;
+    margin-top: .2rem;
 }

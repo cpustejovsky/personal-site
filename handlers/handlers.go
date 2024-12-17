@@ -82,7 +82,8 @@ func (h *Handler) about(w http.ResponseWriter, _ *http.Request) {
 }
 
 func (h *Handler) blog(w http.ResponseWriter, _ *http.Request) {
-	err := h.Renderer.RenderBlogIndex(w, blog.AllPosts)
+	posts := blog.OrderedPosts(blog.AllPosts)
+	err := h.Renderer.RenderBlogIndex(w, posts)
 	InternalServerError(w, err)
 }
 
@@ -100,7 +101,7 @@ func (h *Handler) blogPost(w http.ResponseWriter, r *http.Request) {
 		InternalServerError(w, err)
 		return
 	}
-	if err := p.GetBody(path); err != nil {
+	if p, err = p.GetBody(path); err != nil {
 		InternalServerError(w, err)
 		return
 	}
