@@ -1,4 +1,4 @@
-**Originally Published 2020 September 21 on [Dev.To](https://dev.to/cpustejovsky/let-s-go-book-review-1909) 
+**Originally Published 2020 September 21 on [Dev.To](https://dev.to/cpustejovsky/let-s-go-book-review-1909)** 
 
 After getting my feet wet with [Test Driven Development](https://dev.to/cpustejovsky/learn-go-with-tests-book-review-na4) in Go, I decided to go through [Let's Go](https://lets-go.alexedwards.net/) by [Alex Edwards](https://twitter.com/ajmedwards). My next step is to re-write my web app's backend with Go, so this was the next logical step for me.
 
