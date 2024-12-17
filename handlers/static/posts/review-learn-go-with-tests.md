@@ -1,4 +1,4 @@
-**Originally Published 2020 September 7 on [Dev.To](https://dev.to/cpustejovsky/learn-go-with-tests-book-review-na4) 
+**Originally Published 2020 September 7 on [Dev.To](https://dev.to/cpustejovsky/learn-go-with-tests-book-review-na4)** 
 
 After going through [The Tour of Go](https://tour.golang.org/) and building a small Twitter bot in Go, I wanted to get more serious with this language I love.
 

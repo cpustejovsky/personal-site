@@ -38,7 +38,7 @@ var LetsGoReview = Post{
 	Title:       "Let's Go - Book Review",
 	Description: "Review of Alex Edwards' book of Go web development",
 	Date:        time.Date(2020, time.September, 21, 0, 0, 0, 0, time.UTC),
-	FileName:    "review-lets-go-book",
+	FileName:    "review-lets-go",
 }
 var LeetCodeAssessmentsDontMakeSense = Post{
 	Title:       "LeetCode Assessments Don't Make Sense",
