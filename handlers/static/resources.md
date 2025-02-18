@@ -2,14 +2,14 @@
     - [Communication](#communication)
     - [General](#general)
     - [Git](#git)
-    - [Architecture/Design](#architecture/design)
+    - [Architecture and Design](#architecture-and-design)
     - [Golang](#golang)
     - [Testing](#testing)
     - [REST APIs](#rest-apis)
     - [SQL](#sql)
     - [MongoDB](#mongodb)
-  - [Theology/Spirituality](#theology/spirituality)
-    - [55 Maxims of the Christian Life from Fr. Thomas Hopko](#55-maxims-of-the-christian-life-from-fr.-thomas-hopko)
+  - [Theology and Spirituality](#theology-and-spirituality)
+    - [55 Maxims of the Christian Life from Thomas Hopko](#55-maxims-of-the-christian-life-from-thomas-hopko)
   - [Race Relations](#race-relations)
   - [Mental Health](#mental-health)
 # Technology
@@ -31,10 +31,10 @@ Communication is just as important in technical roles as it is in any other. Her
 * [fetch all remote git branches](https://stackoverflow.com/questions/10312521/how-do-i-fetch-all-git-branches)
 * [global gitignore](https://stackoverflow.com/questions/7335420/global-git-ignore)
 
-## Architecture/Design
+## Architecture and Design
 * [Fault Tolerance in a High Volume, Distributed System](https://netflixtechblog.com/fault-tolerance-in-a-high-volume-distributed-system-91ab4faae74a)
 * [Principle of least astonishment](https://en.wikipedia.org/wiki/Principle_of_least_astonishment)
-
+* [How to metric](https://medium.com/@djsmith42/how-to-metric-edafaf959fc7)
 ## Golang
 * [Vetting `go vet`](https://groups.google.com/g/golang-nuts/c/YyWQQN8iHCU/m/mmVNFqanBgAJ)
 * [Go's `goto` keyword](https://stackoverflow.com/a/11065563)
@@ -71,7 +71,7 @@ Communication is just as important in technical roles as it is in any other. Her
 * [MongoDB Schema Design Anti-Patterns](https://www.mongodb.com/developer/article/schema-design-anti-pattern-summary/)
 * [MongoDB Building Patterns](https://www.mongodb.com/blog/post/building-with-patterns-a-summary)
 
-# Theology/Spirituality
+# Theology and Spirituality
 * **Quote from St. Nektary of Optina**
 
    >One may have a good worldly relationship with non-believers, but one cannot have a relationship in prayer and one must not carry on arguments about religion so that the name of God not be offended during an argument.
@@ -87,7 +87,7 @@ Communication is just as important in technical roles as it is in any other. Her
    >A soldier asked Abba Mius if God accepted repentance. After the old man had taught him many things he said, 'Tell me, my dear, if your cloak is torn, do you throw it away?' He replied, 'No, I mend it and use it again.' The old man said to him, 'If you are so careful about your cloak, will not God be equally careful about his creature?'
 * [Meeting Michelle: Pastoral and Theological Reflections on a Transgender Inmate - Public Orthodoxy](https://publicorthodoxy.org/2019/09/19/meeting-michelle-pastoral-and-theological-reflections-on-a-transgender-inmate/)
 
-## 55 Maxims of the Christian Life from Fr. Thomas Hopko
+## 55 Maxims of the Christian Life from Thomas Hopko
 1. Be always with Christ and trust God in everything.
 2. Pray as you can, not as you think you must.
 3. Have a keepable rule of prayer done by discipline.

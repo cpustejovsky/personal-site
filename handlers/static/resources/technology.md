@@ -17,10 +17,10 @@ Communication is just as important in technical roles as it is in any other. Her
 * [fetch all remote git branches](https://stackoverflow.com/questions/10312521/how-do-i-fetch-all-git-branches)
 * [global gitignore](https://stackoverflow.com/questions/7335420/global-git-ignore)
 
-## Architecture/Design
+## Architecture and Design
 * [Fault Tolerance in a High Volume, Distributed System](https://netflixtechblog.com/fault-tolerance-in-a-high-volume-distributed-system-91ab4faae74a)
 * [Principle of least astonishment](https://en.wikipedia.org/wiki/Principle_of_least_astonishment)
-
+* [How to metric](https://medium.com/@djsmith42/how-to-metric-edafaf959fc7)
 ## Golang
 * [Vetting `go vet`](https://groups.google.com/g/golang-nuts/c/YyWQQN8iHCU/m/mmVNFqanBgAJ)
 * [Go's `goto` keyword](https://stackoverflow.com/a/11065563)
