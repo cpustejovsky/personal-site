@@ -6,21 +6,22 @@ import (
 	"testing"
 
 	approvals "github.com/approvals/go-approval-tests"
-	"github.com/cpustejovsky/personal-site/handlers"
+	"github.com/cpustejovsky/personal-site/domain/blog"
+	"github.com/cpustejovsky/personal-site/renderer"
 )
 
 func TestRender(t *testing.T) {
 	var (
-		aPost = handlers.Post{
+		aPost = blog.Post{
 			Title: "hello world",
 			Body: `# First recipe!
 Welcome to my **amazing blog**. I am going to write about my family recipes, and make sure I write a long, irrelevant and boring story about my family before you get to the actual instructions.`,
 			Description: "This is a description",
-			Tags:        []string{"go", "tdd"},
+			// Tags:        []string{"go", "tdd"},
 		}
 	)
 
-	postRenderer, err := handlers.NewRenderer()
+	postRenderer, err := renderer.New()
 
 	if err != nil {
 		t.Fatal(err)
@@ -38,7 +39,7 @@ Welcome to my **amazing blog**. I am going to write about my family recipes, and
 
 	t.Run("it renders an index of posts", func(t *testing.T) {
 		buf := bytes.Buffer{}
-		posts := []handlers.Post{{Title: "Hello World"}, {Title: "Hello World 2"}}
+		posts := []blog.Post{{Title: "Hello World"}, {Title: "Hello World 2"}}
 
 		if err := postRenderer.RenderBlogIndex(&buf, posts); err != nil {
 			t.Fatal(err)
@@ -50,15 +51,15 @@ Welcome to my **amazing blog**. I am going to write about my family recipes, and
 
 func BenchmarkRender(b *testing.B) {
 	var (
-		aPost = handlers.Post{
+		aPost = blog.Post{
 			Title:       "hello world",
 			Body:        "This is a post",
 			Description: "This is a description",
-			Tags:        []string{"go", "tdd"},
+			// Tags:        []string{"go", "tdd"},
 		}
 	)
 
-	postRenderer, err := handlers.NewRenderer()
+	postRenderer, err := renderer.New()
 
 	if err != nil {
 		b.Fatal(err)

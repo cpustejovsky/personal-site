@@ -20,27 +20,28 @@
             <a class="navbar-item" href="/"><h1>Cpustejovsky 👍</h1></a>
             <div style="display: flex">
                 <a class="navbar-item" href="/about">About</a>
-                <a class="navbar-item" href="/education">Continuing Education</a>
-                <a class="navbar-item" href="/resources">Resources</a>
+                <a class="navbar-item" href="/blog">Blog</a>
             </div>
         </div>
     </nav>
     <main class="container is-max-desktop" style="padding: 1rem">
 
-<h1>hello world</h1>
+<h1 class="title is-2">hello world</h1>
+<div class="content post">
+<p>1 January 1</p>
+<hr/>
 
-<p>This is a description</p>
-
-Tags: <ul><li>go</li><li>tdd</li></ul>
 <h1 id="first-recipe">First recipe!</h1>
 
 <p>Welcome to my <strong>amazing blog</strong>. I am going to write about my family recipes, and make sure I write a long, irrelevant and boring story about my family before you get to the actual instructions.</p>
 
 
+</div>
+
     </main>
     <footer class="footer">
         <div class="content has-text-centered">
-            <p>Cpustejovsky 2024 | <a target="_blank" rel="noreferrer noopener"
+            <p>Cpustejovsky 2025 | <a target="_blank" rel="noreferrer noopener"
                                                  href="https://twitter.com/CCPustejovsky">Twitter</a> | <a
                         target="_blank" rel="noreferrer noopener"
                         href="https://github.com/cpustejovsky">GitHub</a> | <a target="_blank" rel="noreferrer noopener"
