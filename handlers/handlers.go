@@ -186,14 +186,7 @@ func (h *Handler) education(w http.ResponseWriter, _ *http.Request) {
 }
 
 func (h *Handler) resources(w http.ResponseWriter, _ *http.Request) {
-	wd, err := os.Getwd()
-	if err != nil {
-		log.Println("error getting working directory", err)
-		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
-		return
-	}
-	path := wd + "/handlers/static/resources.md"
-	body, err := GetResourcesPage(path)
+	body, err := GetResourcesPage()
 	if err != nil {
 		log.Println("error getting resource page", err)
 		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
@@ -207,12 +200,22 @@ func (h *Handler) resources(w http.ResponseWriter, _ *http.Request) {
 	}
 }
 
-func GetResourcesPage(path string) (string, error) {
-	dat, err := os.ReadFile(path)
+func GetResourcesPage() (string, error) {
+	data, err := static.ReadFile("static/resources.md")
 	if err != nil {
+		log.Println("error reading resources.md")
 		return "", err
 	}
-	return string(dat), nil
+	//
+	// reader := bufio.NewReader(file)
+	// var dat []byte
+	// i, err := reader.Read(dat)
+	// if err != nil {
+	// 	log.Println("error reading resources.md")
+	// 	return "", err
+	// }
+	// log.Println(i)
+	return string(data), nil
 }
 
 func (h *Handler) notfound(w http.ResponseWriter, _ *http.Request) {
