@@ -20,19 +20,30 @@
             <a class="navbar-item" href="/"><h1>Cpustejovsky 👍</h1></a>
             <div style="display: flex">
                 <a class="navbar-item" href="/about">About</a>
-                <a class="navbar-item" href="/education">Continuing Education</a>
-                <a class="navbar-item" href="/resources">Resources</a>
+                <a class="navbar-item" href="/blog">Blog</a>
             </div>
         </div>
     </nav>
     <main class="container is-max-desktop" style="padding: 1rem">
 
-<ol><li><a href="/post/hello-world">Hello World</a></li><li><a href="/post/hello-world-2">Hello World 2</a></li></ol>
+<h2 class="title is-2">Blog</h2>
+<div class="content blog">
+	<a class="post-list" href="/resources"><h3>Resources Page</h3></a>
+	<p class="post-description">Where I keep resouces I keep going back to.</p>
+	<hr/>
+
+	<a class="post-list" href="/blog/"><h3>Hello World</h3><p class="post-date">1 January 1</p></a>
+	<hr/>
+
+	<a class="post-list" href="/blog/"><h3>Hello World 2</h3><p class="post-date">1 January 1</p></a>
+	<hr/>
+
+</div>
 
     </main>
     <footer class="footer">
         <div class="content has-text-centered">
-            <p>Cpustejovsky 2024 | <a target="_blank" rel="noreferrer noopener"
+            <p>Cpustejovsky 2025 | <a target="_blank" rel="noreferrer noopener"
                                                  href="https://twitter.com/CCPustejovsky">Twitter</a> | <a
                         target="_blank" rel="noreferrer noopener"
                         href="https://github.com/cpustejovsky">GitHub</a> | <a target="_blank" rel="noreferrer noopener"
