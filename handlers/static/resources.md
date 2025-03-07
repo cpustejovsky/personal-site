@@ -9,6 +9,8 @@
     - [SQL](#sql)
     - [MongoDB](#mongodb)
   - [Theology and Spirituality](#theology-and-spirituality)
+    - [Links](#links)
+    - [Quotes ](#quotes-)
     - [55 Maxims of the Christian Life from Thomas Hopko](#55-maxims-of-the-christian-life-from-thomas-hopko)
   - [Race Relations](#race-relations)
   - [Mental Health](#mental-health)
@@ -72,21 +74,32 @@ Communication is just as important in technical roles as it is in any other. Her
 * [MongoDB Building Patterns](https://www.mongodb.com/blog/post/building-with-patterns-a-summary)
 
 # Theology and Spirituality
-* **Quote from St. Nektary of Optina**
-
-   >One may have a good worldly relationship with non-believers, but one cannot have a relationship in prayer and one must not carry on arguments about religion so that the name of God not be offended during an argument.
+## Links
 * [Orthodoxy and Nationalism: The Good, the Bad and the Ugly](https://www.ancientfaith.com/podcasts/features/orthodoxy_and_nationalism_the_good_the_bad_and_the_ugly)
-* **Abba Moses Refusing to Judge His Brother**
-  
+* [Meeting Michelle: Pastoral and Theological Reflections on a Transgender Inmate - Public Orthodoxy](https://publicorthodoxy.org/2019/09/19/meeting-michelle-pastoral-and-theological-reflections-on-a-transgender-inmate/)
+* [Metanoia](https://quixoteshrugged.substack.com/p/metanoia?r=a3l8p&utm_medium=ios&triedRedirect=true)
+
+## Quotes 
+   >One may have a good worldly relationship with non-believers, but one cannot have a relationship in prayer and one must not carry on arguments about religion so that the name of God not be offended during an argument.
+   
+\- St. Nektary of Optina
+
+
    >A certain brother committed an offence in Scete, the camp of the monks, and when a congregation was assembled ‎on this matter, they sent after Abba Moses, but he refused to come; then they sent the priest of the church to him, ‎saying, "Come, for all the people are expecting you," and he rose up and came. He took a basket with a hole in it ‎and filled it with sand, and carried it upon his shoulders, and those who went out to meet him said unto him, "What ‎does this mean, O father?" And he said to them, "The sands are my sins which are running down behind me and I ‎cannot see them, and, even, have come to this day to judge shortcomings which are not mine." And when they heard ‎this they set free that brother and said nothing further to him.‎
-* **Quote from St. John Climicus' Ladder of Divine Ascent, Step 5.30**
+   
+   \- Abba Moses Refusing to Judge His Brother
   
    >Do not be surprised that you fall every day; do not give up, but stand your ground courageously. And assuredly the angel who guards you will honour your patience. While a wound is still fresh and warm it is easy to heal, but old, neglected and festering ones are hard to cure, and require for their care much treatment, cutting, plastering and cauterization. Many from long neglect become incurable. But with God all things are possible [Matthew 19:26].
-* **Saying of Abba Mius**
+   
+\- Quote from St. John Climicus' Ladder of Divine Ascent, Step 5.30
 
    >A soldier asked Abba Mius if God accepted repentance. After the old man had taught him many things he said, 'Tell me, my dear, if your cloak is torn, do you throw it away?' He replied, 'No, I mend it and use it again.' The old man said to him, 'If you are so careful about your cloak, will not God be equally careful about his creature?'
-* [Meeting Michelle: Pastoral and Theological Reflections on a Transgender Inmate - Public Orthodoxy](https://publicorthodoxy.org/2019/09/19/meeting-michelle-pastoral-and-theological-reflections-on-a-transgender-inmate/)
+   
+\- Abba Mius
 
+   >Difference of race or condition or sex is indeed taken away by the unity of faith, but it remains embedded in our mortal interactions, and in the journey of this life the apostles themselves teach that it is to be respected…. For we observe in the unity of faith that there are no such distinctions. Yet within the orders of this life they persist. So we walk this path in a way that the name and doctrine of God will not be blasphemed. It is not out of fear or anger that we wish to avoid offense to others but also on account of conscience, so that we may do these things not in mere profession, as if for the eyes of men, but with a pure love toward God.
+
+\- St. Augustine of Hippo
 ## 55 Maxims of the Christian Life from Thomas Hopko
 1. Be always with Christ and trust God in everything.
 2. Pray as you can, not as you think you must.
@@ -155,9 +168,6 @@ Communication is just as important in technical roles as it is in any other. Her
 * [Americanah (Fiction Book)](https://www.amazon.com/Americanah-ALA-Notable-Books-Adults/dp/0307271080)
 * [Race, Identity, and Reconciliation (Book)](https://www.amazon.com/Race-Identity-Reconciliation-Second-Transformative-dp-0998390623/dp/0998390623?pldnSite=1)
 * [Police: Last Week Tonight with John Oliver (33:32)](https://youtu.be/Wf4cea5oObY)
-* **Quote from St. Augustine of Hippo:**
-
-   >Difference of race or condition or sex is indeed taken away by the unity of faith, but it remains embedded in our mortal interactions, and in the journey of this life the apostles themselves teach that it is to be respected…. For we observe in the unity of faith that there are no such distinctions. Yet within the orders of this life they persist. So we walk this path in a way that the name and doctrine of God will not be blasphemed. It is not out of fear or anger that we wish to avoid offense to others but also on account of conscience, so that we may do these things not in mere profession, as if for the eyes of men, but with a pure love toward God.
 
 # Mental Health
 * [This is Water by David Foster Wallace](https://www.youtube.com/watch?v=8CrOL-ydFMI)
