@@ -51,6 +51,7 @@ Communication is just as important in technical roles as it is in any other. Her
 
 * [Just Use Postgres for Everything](https://www.amazingcto.com/postgres-for-everything/)
 * [Top psql commands and flags you need to know](https://hasura.io/blog/top-psql-commands-and-flags-you-need-to-know-postgresql)
+* [Why uppercase SQL is so common, and why it doesn't make sense](https://wirekat.com/why-uppercase-sql-is-so-common-and-why-it-doesnt-make-sense/)
 
 ## MongoDB
 * [MongoDB Schema Design Best Practices](https://www.mongodb.com/developer/article/mongodb-schema-design-best-practices/)
