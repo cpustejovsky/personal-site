@@ -1,10 +1,11 @@
 package lifetogether_test
 
 import (
-	"github.com/cpustejovsky/personal-site/domain/lifetogether"
 	"reflect"
 	"testing"
 	"time"
+
+	"github.com/cpustejovsky/personal-site/domain/lifetogether"
 )
 
 func TestCalculate(t *testing.T) {
@@ -25,7 +26,7 @@ func TestCalculate(t *testing.T) {
 	yourPercentTogether := 30.58
 	otherPercentTogether := 32.52
 
-	want := &lifetogether.Output{
+	expect := &lifetogether.Output{
 		YourName:             ccp,
 		OtherName:            cep,
 		YourPercentTogether:  yourPercentTogether,
@@ -49,8 +50,8 @@ func TestCalculate(t *testing.T) {
 		if err != nil {
 			t.Fatal(err)
 		}
-		if !reflect.DeepEqual(got, want) {
-			t.Fatalf("\nwanted:\t%+v\ngot:\t%+v", want, got)
+		if !reflect.DeepEqual(got, expect) {
+			t.Fatalf("\nexpected:\t%+v\ngot:\t%+v", expect, got)
 		}
 	})
 	t.Run("No name for yourself returns error", func(t *testing.T) {
@@ -116,7 +117,7 @@ func TestCalculate(t *testing.T) {
 			t.Fatal(err)
 		}
 		if out.DatingDuration != nil {
-			t.Fatalf("got: %v, wanted: %v", out.DatingDuration, nil)
+			t.Fatalf("got: %v, expected: %v", out.DatingDuration, nil)
 		}
 	})
 	t.Run("Zero Time DateMarried results in nil for MarriedDuration", func(t *testing.T) {
@@ -135,7 +136,7 @@ func TestCalculate(t *testing.T) {
 			t.Fatal(err)
 		}
 		if out.MarriedDuration != nil {
-			t.Fatalf("got: %v, wanted: %v", out.MarriedDuration, nil)
+			t.Fatalf("got: %v, expected: %v", out.MarriedDuration, nil)
 		}
 	})
 }

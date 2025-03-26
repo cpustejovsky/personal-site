@@ -37,8 +37,8 @@ func CalculateNow(in Input) (*Output, error) {
 
 // Calculate takes Input and return a pointer to Output and error based on the provided time
 func Calculate(t time.Time, in Input) (*Output, error) {
-	err := validateInput(in)
-	if validateInput(in) != nil {
+	err := ValidateInput(in)
+	if ValidateInput(in) != nil {
 		return nil, err
 	}
 
@@ -48,17 +48,17 @@ func Calculate(t time.Time, in Input) (*Output, error) {
 	}
 
 	//Calculate duration since meeting
-	md, err := calculateDayDuration(t, in.DateMet)
+	md, err := CalculateDayDuration(t, in.DateMet)
 	if err != nil {
 		return nil, fmt.Errorf("date met error %w", err)
 	}
 	out.MetDuration = md
 	//Calculate percentage person and other have known each other
-	yb, err := calculateDayDuration(t, in.YourBirthday)
+	yb, err := CalculateDayDuration(t, in.YourBirthday)
 	if err != nil {
 		return nil, fmt.Errorf("your birthday error %w", err)
 	}
-	ob, err := calculateDayDuration(t, in.OtherBirthday)
+	ob, err := CalculateDayDuration(t, in.OtherBirthday)
 	if err != nil {
 		return nil, fmt.Errorf("other birthday error %w", err)
 	}
@@ -69,13 +69,13 @@ func Calculate(t time.Time, in Input) (*Output, error) {
 	out.OtherPercentTogether = round(metDurationFloat/otherAlive*100, 2)
 
 	//Calculate for optional parameters
-	dating, err := calculateDayDuration(t, *in.DateDating)
+	dating, err := CalculateDayDuration(t, *in.DateDating)
 	if err != nil {
 		out.DatingDuration = nil
 	} else {
 		out.DatingDuration = &dating
 	}
-	married, err := calculateDayDuration(t, *in.DateMarried)
+	married, err := CalculateDayDuration(t, *in.DateMarried)
 	if err != nil {
 		out.MarriedDuration = nil
 	} else {
@@ -84,7 +84,7 @@ func Calculate(t time.Time, in Input) (*Output, error) {
 	return &out, nil
 }
 
-func validateInput(in Input) error {
+func ValidateInput(in Input) error {
 	//Validate Mandatory Parameters
 	if in.YourName == "" {
 		return errors.New("provide your name")
@@ -102,7 +102,7 @@ func validateInput(in Input) error {
 	return nil
 }
 
-func calculateDayDuration(t time.Time, dur time.Time) (int, error) {
+func CalculateDayDuration(t time.Time, dur time.Time) (int, error) {
 	if dur.IsZero() {
 		return -1, errors.New("duration is zero")
 	}
