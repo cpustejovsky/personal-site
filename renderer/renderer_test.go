@@ -21,7 +21,7 @@ Welcome to my **amazing blog**. I am going to write about my family recipes, and
 		}
 	)
 
-	postRenderer, err := renderer.New()
+	postRenderer, err := renderer.New(renderer.CurrentYear)
 
 	if err != nil {
 		t.Fatal(err)
@@ -59,7 +59,7 @@ func BenchmarkRender(b *testing.B) {
 		}
 	)
 
-	postRenderer, err := renderer.New()
+	postRenderer, err := renderer.New(renderer.CurrentYear)
 
 	if err != nil {
 		b.Fatal(err)

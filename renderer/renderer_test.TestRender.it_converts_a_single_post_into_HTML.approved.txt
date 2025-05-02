@@ -35,7 +35,6 @@
 
 <p>Welcome to my <strong>amazing blog</strong>. I am going to write about my family recipes, and make sure I write a long, irrelevant and boring story about my family before you get to the actual instructions.</p>
 
-
 </div>
 
     </main>
