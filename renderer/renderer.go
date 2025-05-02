@@ -29,8 +29,8 @@ func newParser() *parser.Parser {
 	extensions := parser.CommonExtensions | parser.AutoHeadingIDs
 	return parser.NewWithExtensions(extensions)
 }
-func New() (*Renderer, error) {
-	templ, err := template.New("base").Funcs(CurrentYear).ParseFS(templates, "templates/*.gohtml")
+func New(fm template.FuncMap) (*Renderer, error) {
+	templ, err := template.New("base").Funcs(fm).ParseFS(templates, "templates/*.gohtml")
 	if err != nil {
 		return nil, err
 	}

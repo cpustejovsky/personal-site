@@ -101,6 +101,10 @@ Communication is just as important in technical roles as it is in any other. Her
    >Difference of race or condition or sex is indeed taken away by the unity of faith, but it remains embedded in our mortal interactions, and in the journey of this life the apostles themselves teach that it is to be respected…. For we observe in the unity of faith that there are no such distinctions. Yet within the orders of this life they persist. So we walk this path in a way that the name and doctrine of God will not be blasphemed. It is not out of fear or anger that we wish to avoid offense to others but also on account of conscience, so that we may do these things not in mere profession, as if for the eyes of men, but with a pure love toward God.
 
 \- St. Augustine of Hippo
+
+> Suppose we were to take a compass and insert the point and draw the outline of a circle. The center point is the same distance from any point on the circumference. Now concentrate your minds on what is to be said! Let us suppose that this circle is the world and that God himself is the center; the straight lines drawn from the circumference to the center are the lives of men. To the degree that the saints enter into the things of the spirit, they desire to come near to God, and in proportion to their progress in the things of the spirit, they do in fact come close to God and to their neighbor. The closer they are to God, the closer they become to one another, and the closer they are to one another, the closer they become to God.
+
+\- St. Dorotheos of Gaza
 ## 55 Maxims of the Christian Life from Thomas Hopko
 1. Be always with Christ and trust God in everything.
 2. Pray as you can, not as you think you must.

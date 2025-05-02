@@ -30,7 +30,7 @@ func newStaticHandler() (http.Handler, error) {
 	return http.FileServer(http.FS(lol)), nil
 }
 func New() (*Handler, error) {
-	r, err := renderer.New()
+	r, err := renderer.New(renderer.CurrentYear)
 	if err != nil {
 		return nil, err
 	}
