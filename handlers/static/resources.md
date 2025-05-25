@@ -37,6 +37,7 @@ Communication is just as important in technical roles as it is in any other. Her
 * [Fault Tolerance in a High Volume, Distributed System](https://netflixtechblog.com/fault-tolerance-in-a-high-volume-distributed-system-91ab4faae74a)
 * [Principle of least astonishment](https://en.wikipedia.org/wiki/Principle_of_least_astonishment)
 * [How to metric](https://medium.com/@djsmith42/how-to-metric-edafaf959fc7)
+* [Canary Release](https://martinfowler.com/bliki/CanaryRelease.html?ref=wellarchitected)
 ## Golang
 * [Vetting `go vet`](https://groups.google.com/g/golang-nuts/c/YyWQQN8iHCU/m/mmVNFqanBgAJ)
 * [Go's `goto` keyword](https://stackoverflow.com/a/11065563)
