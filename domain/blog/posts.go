@@ -14,6 +14,14 @@ var AllPosts = Posts{
 	EventStoreIntroduction,
 	EventStoreAppendAndQuery,
 	EventStoreSnapshotsAndProjections,
+	UblockOrigin,
+}
+
+var UblockOrigin = Post{
+	Title:       "Get Rid of Google's AI Overview",
+	Description: "Use Firefox and Ublock Origin to remove Google's AI overview",
+	Date:        time.Date(2025, time.July, 31, 0, 0, 0, 0, time.UTC),
+	FileName:    "ublock_origin",
 }
 
 var HelloWorld = Post{

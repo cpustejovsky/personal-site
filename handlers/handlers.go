@@ -54,7 +54,6 @@ func New() (*Handler, error) {
 	router.HandleFunc("/ltc", handler.ltc)
 	router.HandleFunc("/ltc/calculate", handler.updateltc)
 	router.Handle("/static/", http.StripPrefix("/static/", staticHandler))
-
 	return handler, nil
 }
 
