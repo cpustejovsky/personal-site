@@ -42,7 +42,8 @@ func main() {
 		log.Fatal(err)
 	}
 	svr := http.Server{
-		Handler: h,
+		Handler:                      h,
+		DisableGeneralOptionsHandler: false,
 	}
 
 	// run server in a goroutine so we can multiplex between signal and error
