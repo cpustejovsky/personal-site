@@ -1,3 +1,4 @@
+
 # Technology
 
 ## Communication
@@ -6,6 +7,18 @@ Communication is just as important in technical roles as it is in any other. Her
 - [Politics and the English Language](https://www.orwellfoundation.com/the-orwell-foundation/orwell/essays-and-other-works/politics-and-the-english-language/)
 - [Hemmingway Editor](https://hemingwayapp.com/)
 - [Elements of Style by Strunk and White](https://en.wikipedia.org/wiki/The_Elements_of_Style)
+
+## Golang
+* [Go Proverbs](https://go-proverbs.github.io/)
+* [The Zen of Go](https://dave.cheney.net/2020/02/23/the-zen-of-go#easy-footnote-2-3936)
+* [SOLID Go Design](https://dave.cheney.net/2016/08/20/solid-go-design)
+* [Go Styleguide](https://google.github.io/styleguide/go/)
+* [Go Naming Conventions](https://talks.golang.org/2014/names.slide)
+* [Dependency Injection in a nutshell](https://appliedgo.net/di/)
+* [Defer, Panic, and Recover](https://go.dev/blog/defer-panic-and-recover)
+* [Intro to generics](https://quii.gitbook.io/learn-go-with-tests/meta/intro-to-generics)
+* [Organizing Database Access in Go](https://www.alexedwards.net/blog/organising-database-access)
+* [Should I use sync.Mutex or a channel?](https://github.com/golang/go/wiki/MutexOrChannel)
 
 ## General
 * [Regex 101](https://regex101.com/)
@@ -22,19 +35,6 @@ Communication is just as important in technical roles as it is in any other. Her
 * [Principle of least astonishment](https://en.wikipedia.org/wiki/Principle_of_least_astonishment)
 * [How to metric](https://medium.com/@djsmith42/how-to-metric-edafaf959fc7)
 * [Canary Release](https://martinfowler.com/bliki/CanaryRelease.html?ref=wellarchitected)
-## Golang
-* [Vetting `go vet`](https://groups.google.com/g/golang-nuts/c/YyWQQN8iHCU/m/mmVNFqanBgAJ)
-* [Go's `goto` keyword](https://stackoverflow.com/a/11065563)
-* [SOLID Go Design](https://dave.cheney.net/2016/08/20/solid-go-design)
-* [Go Styleguide](https://google.github.io/styleguide/go/)
-* [Dependency Injection in a nutshell](https://appliedgo.net/di/)
-* [Ultimate Go Training GitHub repo](https://github.com/ardanlabs/gotraining/blob/master/topics/courses/go/README.md)
-* [Defer, Panic, and Recover](https://go.dev/blog/defer-panic-and-recover)
-* [Intro to generics](https://quii.gitbook.io/learn-go-with-tests/meta/intro-to-generics)
-* [Go Naming Conventions](https://talks.golang.org/2014/names.slide)
-* [Go Proverbs](https://go-proverbs.github.io/)
-* [Organizing Database Access in Go](https://www.alexedwards.net/blog/organising-database-access)
-* [Should I use sync.Mutex or a channel?](https://github.com/golang/go/wiki/MutexOrChannel)
 
 ## Testing
 * Why mocking is likely becoming messy, complicated, and bloated (from [Learn Go with Testing](https://quii.gitbook.io/learn-go-with-tests))
