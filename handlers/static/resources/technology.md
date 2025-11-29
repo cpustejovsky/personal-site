@@ -10,7 +10,8 @@ Communication is just as important in technical roles as it is in any other. Her
 
 ## Golang
 * [Go Proverbs](https://go-proverbs.github.io/)
-* [The Zen of Go](https://dave.cheney.net/2020/02/23/the-zen-of-go#easy-footnote-2-3936)
+* [The Zen of Go](https://dave.cheney.net/2020/02/23/the-zen-of-go)
+* [Share Memory By Communicating](https://go.dev/blog/codelab-share)
 * [SOLID Go Design](https://dave.cheney.net/2016/08/20/solid-go-design)
 * [Go Styleguide](https://google.github.io/styleguide/go/)
 * [Go Naming Conventions](https://talks.golang.org/2014/names.slide)
