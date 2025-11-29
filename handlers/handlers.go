@@ -21,6 +21,7 @@ type Handler struct {
 
 //go:embed "static/*"
 var static embed.FS
+var redirectURL = "https://www.youtube.com/@atmosfar2661"
 
 func newStaticHandler() (http.Handler, error) {
 	lol, err := fs.Sub(static, "static")
@@ -53,6 +54,7 @@ func New() (*Handler, error) {
 	router.HandleFunc("/blog/{name}", handler.blogPost)
 	router.HandleFunc("/ltc", handler.ltc)
 	router.HandleFunc("/ltc/calculate", handler.updateltc)
+	router.HandleFunc("/stressed", handler.redirector)
 	router.Handle("/static/", http.StripPrefix("/static/", staticHandler))
 	return handler, nil
 }
@@ -220,4 +222,8 @@ func GetResourcesPage() (string, error) {
 func (h *Handler) notfound(w http.ResponseWriter, _ *http.Request) {
 	err := h.Renderer.RenderNotFound(w)
 	InternalServerError(w, err)
+}
+
+func (h *Handler) redirector(w http.ResponseWriter, r *http.Request) {
+	http.Redirect(w, r, redirectURL, http.StatusMovedPermanently)
 }
