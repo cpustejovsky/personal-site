@@ -21,7 +21,7 @@ type Handler struct {
 
 //go:embed "static/*"
 var static embed.FS
-var redirectURL = "https://www.youtube.com/@atmosfar2661"
+var redirectURL = "https://www.youtube.com/watch?v=inwTo71B-9k&t=0"
 
 func newStaticHandler() (http.Handler, error) {
 	lol, err := fs.Sub(static, "static")
