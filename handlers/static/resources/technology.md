@@ -26,6 +26,9 @@ Communication is just as important in technical roles as it is in any other. Her
 * [The Art of Googling](https://dev.to/lauragift21/the-art-of-googling-4c04)
 * [explainshell.com](https://explainshell.com/)
 * [Why Floating Point Math is weird for computers](https://0.30000000000000004.com/)
+* [MIT Study Finds AI Use Reprograms the Brain, Leading to Cognitive Decline](https://rudevulture.com/mit-study-finds-ai-use-reprograms-the-brain-leading-to-cognitive-decline/)
+* [Graphic by Esco Obong](https://www.linkedin.com/posts/escoo_if-you-ever-needed-help-remembering-how-queues-activity-7402774426154364929-TMho) that colorfully and memorably shows the difference between LIFO and FIFO
+	![FIFO-LIFO-Toilet](/static/images/fifo-lifo-toilet.jpg)
 
 ## Git
 * [fetch all remote git branches](https://stackoverflow.com/questions/10312521/how-do-i-fetch-all-git-branches)
